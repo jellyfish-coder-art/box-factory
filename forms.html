@@ -4,82 +4,10 @@
   <meta charset="UTF-8">
   <title>Контакты и заказы - Завод картонных коробок</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    .form-container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    .form-section {
-      background: #f9f9f9;
-      border: 1px solid #ddd;
-      padding: 25px;
-      margin: 30px 0;
-      border-radius: 8px;
-    }
-    .form-section h2 {
-      color: #2c3e50;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 10px;
-    }
-    label {
-      display: block;
-      margin: 15px 0 5px;
-      font-weight: bold;
-    }
-    input[type="text"],
-    input[type="tel"],
-    input[type="email"],
-    input[type="number"],
-    input[type="date"],
-    input[type="password"],
-    select,
-    textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-    .inline-group {
-      margin: 10px 0;
-    }
-    .inline-group label {
-      display: inline-block;
-      margin-right: 20px;
-      font-weight: normal;
-    }
-    button[type="submit"] {
-      background: #3498db;
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 15px;
-    }
-    button[type="submit"]:hover {
-      background: #2980b9;
-    }
-    .required::after {
-      content: " *";
-      color: red;
-    }
-    .form-success {
-      display: none;
-      background: #d4edda;
-      color: #155724;
-      padding: 15px;
-      border: 1px solid #c3e6cb;
-      border-radius: 4px;
-      margin: 15px 0;
-    }
-  </style>
+  <!-- УДАЛЕН БЛОК <style> -->
 </head>
 <body>
 <nav>
-  <!-- Добавить графическую ссылку -->
   <a href="index.html" class="logo-link">
     <img src="images/logo.png" alt="Логотип завода картонных коробок" class="logo-img">
   </a>
@@ -90,7 +18,8 @@
     <li><a href="products.html" class="nav-link">Продукция</a></li>
     <li><a href="technologies.html" class="nav-link">Технологии</a></li>
     <li><a href="specs.html" class="nav-link">Характеристики</a></li>
-    <li><a href="forms.html" class="nav-link">Контакты</a></li>
+    <!-- ДОБАВЛЕН КЛАСС active -->
+    <li><a href="forms.html" class="nav-link active">Контакты</a></li>
     <li>
       <a href="#" class="dropdown">DOM и JS</a>
       <ul>
@@ -108,11 +37,12 @@
   <div class="form-container">
     <h1>Контакты и оформление заказов</h1>
     
-    <p style="text-align: center; margin: 20px 0; background-color: #e8f4f8; padding: 10px;">
+    <!-- ИЗМЕНЕНО: inline-стили заменены на класс -->
+    <div class="internal-nav">
       <a href="#contact-form">Форма 1: Контактные данные</a> | 
       <a href="#order-form">Форма 2: Заказ коробок</a> |
       <a href="#top">К началу страницы</a>
-    </p>
+    </div>
 
     <!-- Сообщение об успешной отправке -->
     <div id="success-message" class="form-success">
@@ -125,36 +55,37 @@
       <p>Заполните форму, чтобы мы могли с вами связаться. Все поля обязательны для заполнения.</p>
       
       <form action="https://formspree.io/f/mpwvrknp" method="POST" id="contactForm">
-        <!-- Formspree требует поле с именем _replyto для email -->
         <input type="hidden" name="_subject" value="Новая заявка с сайта завода коробок">
         <input type="hidden" name="_format" value="plain">
         
-        <label class="required">Фамилия:</label>
-        <input type="text" name="lastname" required value="Иванов" placeholder="Введите вашу фамилию">
+        <!-- ДОБАВЛЕНЫ КЛАССЫ form-label и form-input -->
+        <label class="form-label required">Фамилия:</label>
+        <input type="text" name="lastname" class="form-input" required value="Иванов" placeholder="Введите вашу фамилию">
         
-        <label class="required">Имя:</label>
-        <input type="text" name="firstname" required value="Петр" placeholder="Введите ваше имя">
+        <label class="form-label required">Имя:</label>
+        <input type="text" name="firstname" class="form-input" required value="Петр" placeholder="Введите ваше имя">
         
-        <label class="required">Группа/Компания:</label>
-        <input type="text" name="group" required value="Группа КИ-21-01" placeholder="Группа (для студентов) или название компании">
+        <label class="form-label required">Группа/Компания:</label>
+        <input type="text" name="group" class="form-input" required value="Группа КИ-21-01" placeholder="Группа (для студентов) или название компании">
         
-        <label class="required">Мобильный телефон:</label>
-        <input type="tel" name="phone" required value="+7 (999) 123-45-67" placeholder="+7 (XXX) XXX-XX-XX">
+        <label class="form-label required">Мобильный телефон:</label>
+        <input type="tel" name="phone" class="form-input" required value="+7 (999) 123-45-67" placeholder="+7 (XXX) XXX-XX-XX">
         
-        <label class="required">Электронная почта:</label>
-        <input type="email" name="_replyto" required value="ivanov@example.com" placeholder="example@mail.ru">
+        <label class="form-label required">Электронная почта:</label>
+        <input type="email" name="_replyto" class="form-input" required value="ivanov@example.com" placeholder="example@mail.ru">
         
-        <label class="required">Дата отправки сообщения:</label>
-        <input type="date" name="date" required value="2025-01-15">
+        <label class="form-label required">Дата отправки сообщения:</label>
+        <input type="date" name="date" class="form-input" required value="2025-01-15">
         
-        <label>Дополнительное сообщение:</label>
-        <textarea name="message" rows="4" placeholder="Ваши вопросы или комментарии..."></textarea>
+        <label class="form-label">Дополнительное сообщение:</label>
+        <textarea name="message" class="form-input" rows="4" placeholder="Ваши вопросы или комментарии..."></textarea>
         
         <input type="hidden" name="form_type" value="contact_form">
         <input type="hidden" name="source" value="website">
         
-        <button type="submit">Отправить контактные данные</button>
-        <p style="font-size: 12px; color: #666; margin-top: 10px;">
+        <!-- ДОБАВЛЕН КЛАСС form-submit -->
+        <button type="submit" class="form-submit">Отправить контактные данные</button>
+        <p class="form-note">
           * Отправляя форму, вы соглашаетесь на обработку персональных данных.
         </p>
       </form>
@@ -166,91 +97,80 @@
       <p>Заполните форму для заказа картонных коробок. Укажите параметры и количество.</p>
       
       <form action="https://formspree.io/f/mpwvrknp" method="POST" id="orderForm">
-        <!-- Formspree настройки -->
         <input type="hidden" name="_subject" value="Новый заказ коробок с сайта">
         <input type="hidden" name="_format" value="plain">
         
-        <!-- Тип text -->
-        <label class="required">Название организации:</label>
-        <input type="text" name="company_name" required value="ООО 'Ромашка'" placeholder="Название вашей компании">
+        <label class="form-label required">Название организации:</label>
+        <input type="text" name="company_name" class="form-input" required value="ООО 'Ромашка'" placeholder="Название вашей компании">
         
-        <label class="required">Контактное лицо:</label>
-        <input type="text" name="contact_person" required value="Алексей Сергеевич" placeholder="ФИО контактного лица">
+        <label class="form-label required">Контактное лицо:</label>
+        <input type="text" name="contact_person" class="form-input" required value="Алексей Сергеевич" placeholder="ФИО контактного лица">
         
-        <!-- Email для Formspree -->
-        <label class="required">Электронная почта для связи:</label>
-        <input type="email" name="_replyto" required value="company@example.com" placeholder="company@example.com">
+        <label class="form-label required">Электронная почта для связи:</label>
+        <input type="email" name="_replyto" class="form-input" required value="company@example.com" placeholder="company@example.com">
         
-        <!-- Тип number -->
-        <label class="required">Количество коробок:</label>
-        <input type="number" name="quantity" required value="100" min="10" max="10000" step="10">
+        <label class="form-label required">Количество коробок:</label>
+        <input type="number" name="quantity" class="form-input" required value="100" min="10" max="10000" step="10">
         
-        <!-- Тип radio -->
-        <label class="required">Тип коробки:</label>
+        <label class="form-label required">Тип коробки:</label>
         <div class="inline-group">
-          <label><input type="radio" name="box_type" value="standard" checked> Стандартная (3-слойная)</label>
-          <label><input type="radio" name="box_type" value="archive"> Архивная (с ручками)</label>
-          <label><input type="radio" name="box_type" value="moving"> Для переезда (5-слойная)</label>
-          <label><input type="radio" name="box_type" value="gift"> Подарочная (цветная)</label>
+          <label class="radio-label"><input type="radio" name="box_type" value="standard" checked> Стандартная (3-слойная)</label>
+          <label class="radio-label"><input type="radio" name="box_type" value="archive"> Архивная (с ручками)</label>
+          <label class="radio-label"><input type="radio" name="box_type" value="moving"> Для переезда (5-слойная)</label>
+          <label class="radio-label"><input type="radio" name="box_type" value="gift"> Подарочная (цветная)</label>
         </div>
         
-        <!-- Тип checkbox -->
-        <label>Дополнительные опции:</label>
+        <label class="form-label">Дополнительные опции:</label>
         <div class="inline-group">
-          <label><input type="checkbox" name="options_handles" value="yes" checked> Пластиковые ручки (+5%)</label>
-          <label><input type="checkbox" name="options_logo" value="yes"> Печать логотипа (+15%)</label>
-          <label><input type="checkbox" name="options_water" value="yes"> Влагостойкая пропитка (+10%)</label>
-          <label><input type="checkbox" name="options_design" value="yes"> Индивидуальный дизайн (+20%)</label>
+          <label class="checkbox-label"><input type="checkbox" name="options_handles" value="yes" checked> Пластиковые ручки (+5%)</label>
+          <label class="checkbox-label"><input type="checkbox" name="options_logo" value="yes"> Печать логотипа (+15%)</label>
+          <label class="checkbox-label"><input type="checkbox" name="options_water" value="yes"> Влагостойкая пропитка (+10%)</label>
+          <label class="checkbox-label"><input type="checkbox" name="options_design" value="yes"> Индивидуальный дизайн (+20%)</label>
         </div>
         
-        <!-- Тип date -->
-        <label class="required">Желаемая дата доставки:</label>
-        <input type="date" name="delivery_date" required value="2025-02-01" min="2025-01-20">
+        <label class="form-label required">Желаемая дата доставки:</label>
+        <input type="date" name="delivery_date" class="form-input" required value="2025-02-01" min="2025-01-20">
         
-        <!-- Тип password -->
-        <label class="required">Пароль для подтверждения заказа:</label>
-        <input type="password" name="order_password" required value="demo123" placeholder="Введите пароль">
+        <label class="form-label required">Пароль для подтверждения заказа:</label>
+        <input type="password" name="order_password" class="form-input" required value="demo123" placeholder="Введите пароль">
         
-        <!-- Выпадающий список (дополнительно) -->
-        <label>Размер коробки:</label>
-        <select name="box_size">
+        <label class="form-label">Размер коробки:</label>
+        <select name="box_size" class="form-input">
           <option value="small">Малая (300×200×200 мм)</option>
           <option value="medium" selected>Средняя (400×300×300 мм)</option>
           <option value="large">Большая (600×400×400 мм)</option>
           <option value="xlarge">Очень большая (800×600×600 мм)</option>
         </select>
         
-        <!-- Текстовое поле -->
-        <label>Комментарий к заказу:</label>
-        <textarea name="order_comment" rows="3" placeholder="Особые пожелания, инструкции по доставке..."></textarea>
+        <label class="form-label">Комментарий к заказу:</label>
+        <textarea name="order_comment" class="form-input" rows="3" placeholder="Особые пожелания, инструкции по доставке..."></textarea>
         
-        <!-- Тип hidden -->
         <input type="hidden" name="order_id" value="ORD-2025-001">
         <input type="hidden" name="product_category" value="cardboard_boxes">
         <input type="hidden" name="promo_code" value="WELCOME2025">
         <input type="hidden" name="form_type" value="order_form">
         
-        <button type="submit">Отправить заказ</button>
-        <p style="font-size: 12px; color: #666; margin-top: 10px;">
+        <button type="submit" class="form-submit">Отправить заказ</button>
+        <p class="form-note">
           * Заказ будет отправлен на обработку. Мы свяжемся с вами для уточнения деталей.
         </p>
       </form>
     </div>
 
-    <!-- Информация о Formspree -->
-    <div style="background: #e8f4f8; padding: 15px; border-radius: 5px; margin-top: 30px;">
+    <!-- ИЗМЕНЕНО: inline-стили заменены на класс -->
+    <div class="info-box">
       <h3>О системе обработки форм:</h3>
       <p>Формы отправляются через <strong>Formspree.io</strong> — сервис для обработки HTML-форм.</p>
       <p>После отправки формы вы будете перенаправлены на страницу подтверждения Formspree.</p>
       <p>Данные форм будут отправлены на указанный в Formspree email-адрес.</p>
     </div>
 
-    <!-- Ссылка наверх -->
-    <p style="text-align: center; margin-top: 30px;">
+    <!-- ИЗМЕНЕНО: inline-стили заменены на класс -->
+    <div class="page-footer-links">
       <a href="#top">Вернуться к началу страницы</a> | 
       <a href="index.html">На главную страницу</a> |
       <a href="products.html">Каталог продукции</a>
-    </p>
+    </div>
   </div>
 
   <script>
@@ -260,24 +180,19 @@
       const orderForm = document.getElementById('orderForm');
       const successMessage = document.getElementById('success-message');
       
-      // Показываем сообщение об успехе при возврате с Formspree
       if (window.location.search.includes('success=true')) {
         successMessage.style.display = 'block';
         window.scrollTo(0, 0);
       }
       
-      // Обработка формы контактов
       if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-          // Можно добавить дополнительную валидацию перед отправкой
           console.log('Отправка контактной формы');
         });
       }
       
-      // Обработка формы заказа
       if (orderForm) {
         orderForm.addEventListener('submit', function(e) {
-          // Можно добавить дополнительную валидацию перед отправкой
           console.log('Отправка формы заказа');
         });
       }
@@ -286,4 +201,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
