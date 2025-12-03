@@ -6,36 +6,152 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   <nav>
+  <nav>
+    <!-- Добавить графическую ссылку -->
+    <a href="index.html" class="logo-link">
+      <img src="images/logo.png" alt="Логотип завода картонных коробок" class="logo-img">
+    </a>
+    
     <ul>
-      <li><a href="index.html"  class="nav-link">Главная</a></li>
-      <li><a href="about.html"  class="nav-link">О заводе</a></li>
-      <li><a href="products.html"  class="nav-link">Продукция</a></li>
-      <li><a href="technologies.html"  class="nav-link">Технологии</a></li>
-      <li><a href="specs.html"  class="nav-link">Характеристики</a></li>
-      <li><a href="forms.html"  class="nav-link">Контакты</a></li>
+      <li><a href="index.html" class="nav-link">Главная</a></li>
+      <li><a href="about.html" class="nav-link">О заводе</a></li>
+      <li><a href="products.html" class="nav-link">Продукция</a></li>
+      <li><a href="technologies.html" class="nav-link">Технологии</a></li>
+      <li><a href="specs.html" class="nav-link">Характеристики</a></li>
+      <li><a href="forms.html" class="nav-link">Контакты</a></li>
       <li>
-        <a href="#">DOM и JS</a>
+        <a href="#" class="dropdown">DOM и JS</a>
         <ul>
-          <li><a href="dom_read.html"  class="nav-link">Считываем DOM</a></li>
-          <li><a href="dom_translate.html"  class="nav-link">Кириллица → Латиница</a></li>
-          <li><a href="algorithm.html"  class="nav-link">Алгоритмическая задача</a></li>
+          <li><a href="dom_read.html" class="nav-link">Считываем DOM</a></li>
+          <!-- ДОБАВИТЬ КЛАСС active для текущей страницы -->
+          <li><a href="dom_translate.html" class="nav-link active">Кириллица → Латиница</a></li>
+          <li><a href="algorithm.html" class="nav-link">Алгоритмическая задача</a></li>
         </ul>
       </li>
       <li><a href="https://yandex.ru" target="_blank" rel="noopener">Наш поставщик</a></li>
     </ul>
   </nav>
 
+  <!-- Внутренняя навигация -->
+  <div id="top"></div>
   <h1>Изменяем кириллицу на латиницу по клику</h1>
-  <h2>Паспортные данные:</h2>
-  <p id="surname"><b>Фамилия:</b> Тухватшина</p>
-  <p id="name"><b>Имя:</b> Эльвина</p>
-  <p id="year"><b>Год рождения:</b> 2005</p>
-  <button onclick="translateToLatin()">Перевести на латиницу</button>
-  <p id="result"></p>
+  
+  <div class="internal-nav">
+    <a href="#passport">Паспортные данные</a> | 
+    <a href="#transliteration">Таблица транслитерации</a> | 
+    <a href="#examples">Примеры перевода</a> |
+    <a href="#top">К началу страницы</a>
+  </div>
+
+  <!-- Раздел 1: Паспортные данные -->
+  <div id="passport">
+    <h2>Паспортные данные (кириллица):</h2>
+    
+    <div class="passport-card" style="background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #dee2e6; margin: 20px 0;">
+      <p id="surname"><b>Фамилия:</b> <span class="cyrillic-text">Тухватшина</span></p>
+      <p id="name"><b>Имя:</b> <span class="cyrillic-text">Эльвина</span></p>
+      <p id="year"><b>Год рождения:</b> <span class="cyrillic-text">2005</span></p>
+      <p id="birthplace"><b>Место рождения:</b> <span class="cyrillic-text">г. Туймазы</span></p>
+    </div>
+    
+    <div style="text-align: center; margin: 30px 0;">
+      <button onclick="translateToLatin()" class="form-submit">Перевести на латиницу</button>
+      <button onclick="restoreCyrillic()" class="form-submit" style="background: #95a5a6;">Вернуть кириллицу</button>
+      <button onclick="translateAllToLatin()" class="form-submit" style="background: #e67e22;">Перевести всё (включая год)</button>
+    </div>
+    
+    <div id="result" style="padding: 15px; background: #e8f4f8; border-radius: 5px; margin: 20px 0;"></div>
+    
+    <div id="translated-passport" style="background: #fff3cd; padding: 20px; border-radius: 8px; border: 1px solid #ffeaa7; margin: 20px 0; display: none;">
+      <h3>Переведённые данные (латиница):</h3>
+      <p><b>Фамилия:</b> <span id="translated-surname"></span></p>
+      <p><b>Имя:</b> <span id="translated-name"></span></p>
+      <p><b>Год рождения:</b> <span id="translated-year"></span></p>
+      <p><b>Место рождения:</b> <span id="translated-birthplace"></span></p>
+    </div>
+  </div>
+
+  <!-- Раздел 2: Таблица транслитерации -->
+  <div id="transliteration">
+    <h2>Таблица транслитерации (ГОСТ 7.79-2000 система Б):</h2>
+    
+    <table class="table-bg-image" style="margin: 20px 0;">
+      <tr>
+        <th colspan="2">Кириллица → Латиница</th>
+      </tr>
+      <tr>
+        <td style="width: 50%;">
+          <strong>Русские буквы:</strong><br>
+          А→A, Б→B, В→V, Г→G, Д→D, Е→E, Ё→E, Ж→Zh<br>
+          З→Z, И→I, Й→Y, К→K, Л→L, М→M, Н→N<br>
+          О→O, П→P, Р→R, С→S, Т→T, У→U, Ф→F
+        </td>
+        <td>
+          <strong>Продолжение:</strong><br>
+          Х→Kh, Ц→Ts, Ч→Ch, Ш→Sh, Щ→Sch<br>
+          Ы→Y, Э→E, Ю→Yu, Я→Ya<br>
+          Ъ→'', Ь→'', ъ→'', ь→''
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: center; background: #f0f8ff;">
+          <strong>Особые случаи:</strong><br>
+          "ий" → "iy", "ый" → "yy", "эй" → "ey", "ей" → "ey"
+        </td>
+      </tr>
+    </table>
+    
+    <div style="background: #e8f4f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+      <h4>Особенности транслитерации:</h4>
+      <ul>
+        <li>Буква "Ё" транслитерируется как "E" (как и "Е")</li>
+        <li>Мягкий и твёрдый знаки опускаются</li>
+        <li>Сочетания букв могут иметь особые правила</li>
+        <li>Для паспортов РФ используется система МВД/ICAO</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Раздел 3: Примеры перевода -->
+  <div id="examples">
+    <h2>Примеры перевода других данных:</h2>
+    
+    <div class="example-box" style="display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0;">
+      <div style="flex: 1; min-width: 200px; background: #f9f9f9; padding: 15px; border-radius: 5px;">
+        <h4>Города России:</h4>
+        <p><button onclick="translateExample('Москва')" class="small-btn">Москва → ?</button></p>
+        <p><button onclick="translateExample('Санкт-Петербург')" class="small-btn">Санкт-Петербург → ?</button></p>
+        <p><button onclick="translateExample('Новосибирск')" class="small-btn">Новосибирск → ?</button></p>
+      </div>
+      
+      <div style="flex: 1; min-width: 200px; background: #f9f9f9; padding: 15px; border-radius: 5px;">
+        <h4>Распространённые фамилии:</h4>
+        <p><button onclick="translateExample('Иванов')" class="small-btn">Иванов → ?</button></p>
+        <p><button onclick="translateExample('Петрова')" class="small-btn">Петрова → ?</button></p>
+        <p><button onclick="translateExample('Смирнов')" class="small-btn">Смирнов → ?</button></p>
+      </div>
+    </div>
+    
+    <div id="example-result" style="padding: 15px; background: #d4edda; border-radius: 5px; margin: 15px 0; display: none;"></div>
+    
+    <div style="background: #fff3cd; padding: 15px; border-radius: 5px; margin: 15px 0; border: 1px solid #ffeaa7;">
+      <h4>Попробуйте сами:</h4>
+      <input type="text" id="custom-text" placeholder="Введите текст на кириллице" style="width: 70%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+      <button onclick="translateCustomText()" class="form-submit" style="background: #9b59b6;">Перевести</button>
+      <p id="custom-result" style="margin-top: 10px; font-weight: bold;"></p>
+    </div>
+  </div>
+
+  <!-- Ссылка наверх -->
+  <div class="page-footer-links">
+    <a href="#top">Вернуться к началу страницы</a> | 
+    <a href="index.html">На главную страницу</a> |
+    <a href="dom_read.html">Предыдущая: Считываем DOM</a> |
+    <a href="algorithm.html">Следующая: Алгоритмическая задача</a>
+  </div>
 
   <script>
-    // Простейшая таблица замены букв (можно расширить по стандарту ICAO)
+    // Полная таблица транслитерации (ГОСТ 7.79-2000 система Б)
     const cyrillicToLatin = {
       'А':'A','а':'a','Б':'B','б':'b','В':'V','в':'v','Г':'G','г':'g',
       'Д':'D','д':'d','Е':'E','е':'e','Ё':'E','ё':'e','Ж':'Zh','ж':'zh',
@@ -43,32 +159,212 @@
       'Л':'L','л':'l','М':'M','м':'m','Н':'N','н':'n','О':'O','о':'o',
       'П':'P','п':'p','Р':'R','р':'r','С':'S','с':'s','Т':'T','т':'t',
       'У':'U','у':'u','Ф':'F','ф':'f','Х':'Kh','х':'kh','Ц':'Ts','ц':'ts',
-      'Ч':'Ch','ч':'ch','Ш':'Sh','ш':'sh','Щ':'Sch','щ':'sch','Ы':'Y','ы':'y','ъ':'','ь':'',
+      'Ч':'Ch','ч':'ch','Ш':'Sh','ш':'sh','Щ':'Sch','щ':'sch',
+      'Ы':'Y','ы':'y','Ъ':'','ъ':'','Ь':'','ь':'',
       'Э':'E','э':'e','Ю':'Yu','ю':'yu','Я':'Ya','я':'ya'
     };
+    
+    // Таблица для перевода цифр в слова (для года рождения)
+    const numbersToLatin = {
+      '0':'zero','1':'one','2':'two','3':'three','4':'four',
+      '5':'five','6':'six','7':'seven','8':'eight','9':'nine'
+    };
 
-    function translit(str) {
-      return str.replace(/[А-яЁё]/g, function(char) {
+    // Функция транслитерации
+    function translit(text) {
+      return text.replace(/[А-яЁё]/g, function(char) {
         return cyrillicToLatin[char] || char;
       });
     }
-
-    function translateToLatin() {
-      const surname = document.getElementById('surname');
-      const name = document.getElementById('name');
-      const year = document.getElementById('year');
-
-      surname.innerHTML = '<b>Фамилия:</b> ' + translit('Тухватшина');
-      name.innerHTML = '<b>Имя:</b> ' + translit('Эльвина');
-      year.innerHTML = '<b>Год рождения:</b> 2005';
-      document.getElementById('result').textContent =
-        'Данные переведены на латиницу: ' +
-        translit('Тухватшина') + ' ' + translit('Эльвина') + ', 2005';
+    
+    // Функция для перевода цифр
+    function translateNumbers(text) {
+      return text.replace(/[0-9]/g, function(num) {
+        return numbersToLatin[num] || num;
+      });
     }
-  </script>
- 
-<script src="script.js"></script>
+    
+    // Функция для перевода всего текста (буквы + цифры)
+    function translitFull(text) {
+      let result = translit(text);
+      result = translateNumbers(result);
+      return result;
+    }
 
+    // Оригинальные данные для восстановления
+    let originalData = {
+      surname: 'Тухватшина',
+      name: 'Эльвина',
+      year: '2005',
+      birthplace: 'г. Туймазы'
+    };
+
+    // Функция перевода на латиницу (только буквы)
+    function translateToLatin() {
+      const surname = document.querySelector('#surname .cyrillic-text');
+      const name = document.querySelector('#name .cyrillic-text');
+      const year = document.querySelector('#year .cyrillic-text');
+      const birthplace = document.querySelector('#birthplace .cyrillic-text');
+      
+      // Сохраняем оригинальные данные если еще не сохранены
+      if (!originalData.surname) {
+        originalData.surname = surname.textContent;
+        originalData.name = name.textContent;
+        originalData.year = year.textContent;
+        originalData.birthplace = birthplace.textContent;
+      }
+      
+      // Переводим
+      surname.textContent = translit(originalData.surname);
+      name.textContent = translit(originalData.name);
+      year.textContent = originalData.year; // Цифры не переводим
+      birthplace.textContent = translit(originalData.birthplace);
+      
+      // Показываем результат
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = `
+        <strong>Данные переведены на латиницу:</strong><br>
+        • Фамилия: ${translit(originalData.surname)}<br>
+        • Имя: ${translit(originalData.name)}<br>
+        • Год рождения: ${originalData.year}<br>
+        • Место рождения: ${translit(originalData.birthplace)}
+      `;
+      
+      // Показываем переведённые данные в отдельном блоке
+      showTranslatedPassport();
+    }
+    
+    // Функция перевода ВСЕГО на латиницу (включая цифры)
+    function translateAllToLatin() {
+      const surname = document.querySelector('#surname .cyrillic-text');
+      const name = document.querySelector('#name .cyrillic-text');
+      const year = document.querySelector('#year .cyrillic-text');
+      const birthplace = document.querySelector('#birthplace .cyrillic-text');
+      
+      // Сохраняем оригинальные данные
+      if (!originalData.surname) {
+        originalData.surname = surname.textContent;
+        originalData.name = name.textContent;
+        originalData.year = year.textContent;
+        originalData.birthplace = birthplace.textContent;
+      }
+      
+      // Переводим всё (буквы + цифры)
+      surname.textContent = translit(originalData.surname);
+      name.textContent = translit(originalData.name);
+      year.textContent = translitFull(originalData.year); // Переводим и цифры!
+      birthplace.textContent = translit(originalData.birthplace);
+      
+      // Показываем результат
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = `
+        <strong>Все данные переведены на латиницу (включая цифры):</strong><br>
+        • Фамилия: ${translit(originalData.surname)}<br>
+        • Имя: ${translit(originalData.name)}<br>
+        • Год рождения: ${translitFull(originalData.year)}<br>
+        • Место рождения: ${translit(originalData.birthplace)}
+      `;
+      
+      // Показываем переведённые данные в отдельном блоке
+      showTranslatedPassport();
+    }
+    
+    // Функция восстановления кириллицы
+    function restoreCyrillic() {
+      if (!originalData.surname) return;
+      
+      const surname = document.querySelector('#surname .cyrillic-text');
+      const name = document.querySelector('#name .cyrillic-text');
+      const year = document.querySelector('#year .cyrillic-text');
+      const birthplace = document.querySelector('#birthplace .cyrillic-text');
+      
+      // Восстанавливаем оригинальные данные
+      surname.textContent = originalData.surname;
+      name.textContent = originalData.name;
+      year.textContent = originalData.year;
+      birthplace.textContent = originalData.birthplace;
+      
+      // Показываем сообщение
+      document.getElementById('result').innerHTML = `
+        <strong>Данные восстановлены (кириллица):</strong><br>
+        • Фамилия: ${originalData.surname}<br>
+        • Имя: ${originalData.name}<br>
+        • Год рождения: ${originalData.year}<br>
+        • Место рождения: ${originalData.birthplace}
+      `;
+      
+      // Скрываем блок с переведёнными данными
+      document.getElementById('translated-passport').style.display = 'none';
+    }
+    
+    // Функция показа переведённых данных в отдельном блоке
+    function showTranslatedPassport() {
+      const translatedDiv = document.getElementById('translated-passport');
+      const surname = document.querySelector('#surname .cyrillic-text').textContent;
+      const name = document.querySelector('#name .cyrillic-text').textContent;
+      const year = document.querySelector('#year .cyrillic-text').textContent;
+      const birthplace = document.querySelector('#birthplace .cyrillic-text').textContent;
+      
+      document.getElementById('translated-surname').textContent = surname;
+      document.getElementById('translated-name').textContent = name;
+      document.getElementById('translated-year').textContent = year;
+      document.getElementById('translated-birthplace').textContent = birthplace;
+      
+      translatedDiv.style.display = 'block';
+    }
+    
+    // Функция для примеров перевода
+    function translateExample(text) {
+      const latinText = translit(text);
+      const resultDiv = document.getElementById('example-result');
+      
+      resultDiv.innerHTML = `
+        <strong>Пример перевода:</strong><br>
+        Кириллица: <span style="color: #2c3e50">${text}</span><br>
+        Латиница: <span style="color: #e74c3c">${latinText}</span>
+      `;
+      resultDiv.style.display = 'block';
+    }
+    
+    // Функция для перевода пользовательского текста
+    function translateCustomText() {
+      const input = document.getElementById('custom-text');
+      const text = input.value.trim();
+      
+      if (!text) {
+        alert('Введите текст для перевода');
+        return;
+      }
+      
+      const latinText = translit(text);
+      const latinFullText = translitFull(text);
+      
+      document.getElementById('custom-result').innerHTML = `
+        <strong>Результат:</strong><br>
+        Исходный текст: ${text}<br>
+        Транслитерация (буквы): ${latinText}<br>
+        Транслитерация (буквы + цифры): ${latinFullText}
+      `;
+    }
+    
+    // Инициализация при загрузке страницы
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Страница транслитерации загружена');
+      console.log('Используйте кнопки для перевода текста');
+      
+      // Автоматически заполняем оригинальные данные
+      const surname = document.querySelector('#surname .cyrillic-text');
+      const name = document.querySelector('#name .cyrillic-text');
+      const year = document.querySelector('#year .cyrillic-text');
+      const birthplace = document.querySelector('#birthplace .cyrillic-text');
+      
+      originalData.surname = surname.textContent;
+      originalData.name = name.textContent;
+      originalData.year = year.textContent;
+      originalData.birthplace = birthplace.textContent;
+    });
+  </script>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
