@@ -258,6 +258,31 @@ th {
   margin: 15px 0;
 }
 
+    .small-btn {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    
+    .small-btn:hover {
+      background: #2980b9;
+    }
+    
+    .passport-card p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    
+    .cyrillic-text {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+
 /* Классы для галереи (опционально) */
 .box-gallery {
   display: flex;
@@ -524,6 +549,7 @@ li {
 nav ul li ul li { display: block; margin: 0; }
 nav ul li ul li a { color: #fff; white-space: nowrap; display: block; padding: 6px 12px; }
 nav a.active, nav a:focus, nav a:hover { background: #a8c3e1; color: #222; text-decoration: underline; border-radius: 4px; }
+
 
 
 
