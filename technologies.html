@@ -4,35 +4,10 @@
   <meta charset="UTF-8" />
   <title>Технологии производства картонных коробок</title>
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    .tech-image {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-    }
-    nav ul li a.active {
-      background-color: #a8c3e1;
-      color: #222;
-      text-decoration: underline;
-      border-radius: 4px;
-      padding: 3px 7px;
-    }
-    figure {
-      text-align: center;
-      margin: 20px 0;
-    }
-    figcaption {
-      font-style: italic;
-      color: #555;
-      margin-top: 5px;
-    }
-  </style>
+  <!-- УДАЛЕН БЛОК <style> -->
 </head>
 <body>
  <nav>
-  <!-- Добавить графическую ссылку -->
   <a href="index.html" class="logo-link">
     <img src="images/logo.png" alt="Логотип завода картонных коробок" class="logo-img">
   </a>
@@ -41,7 +16,8 @@
     <li><a href="index.html" class="nav-link">Главная</a></li>
     <li><a href="about.html" class="nav-link">О заводе</a></li>
     <li><a href="products.html" class="nav-link">Продукция</a></li>
-    <li><a href="technologies.html" class="nav-link">Технологии</a></li>
+    <!-- ДОБАВЛЕН КЛАСС active -->
+    <li><a href="technologies.html" class="nav-link active">Технологии</a></li>
     <li><a href="specs.html" class="nav-link">Характеристики</a></li>
     <li><a href="forms.html" class="nav-link">Контакты</a></li>
     <li>
@@ -60,13 +36,14 @@
   <div id="top"></div>
   <h1>Технологии производства картонных коробок</h1>
   
-  <p style="text-align: center; margin: 20px 0; background-color: #f0f8ff; padding: 10px;">
+  <!-- ИЗМЕНЕНО: inline-стили заменены на класс -->
+  <div class="internal-nav">
     <a href="#materials">Раздел 1: Материалы</a> | 
     <a href="#equipment">Раздел 2: Оборудование</a> | 
     <a href="#process">Раздел 3: Процесс</a> |
     <a href="#tech-table">Раздел 4: Техпараметры</a> |
     <a href="#top">К началу страницы</a>
-  </p>
+  </div>
 
   <p>Наш завод использует современные технологии и оборудование для изготовления качественной продукции.</p>
 
@@ -93,7 +70,8 @@
   <h3>Полная производственная линия:</h3>
   <figure>
     <a href="images/production_line_big.jpg" target="_blank">
-      <img src="images/production_line_small.jpg" alt="Миниатюра: производственная линия" width="100" style="border: 2px solid #0066cc;">
+      <!-- ИЗМЕНЕНО: inline-стили заменены на класс -->
+      <img src="images/production_line_small.jpg" alt="Миниатюра: производственная линия" class="thumbnail">
     </a>
     <figcaption>Автоматизированная линия производства. Кликните для просмотра в полном размере (600×400px)</figcaption>
   </figure>
@@ -110,6 +88,7 @@
 
   <!-- Изображения с пояснениями -->
   <figure>
+    <!-- Класс tech-image нужно добавить в CSS или удалить -->
     <img src="images/equipment1.jpg" alt="Резательный станок" class="tech-image" />
     <figcaption>Современный резательный станок с ЧПУ для точной резки картона</figcaption>
   </figure>
@@ -131,26 +110,26 @@
 
   <!-- Таблица -->
   <h2 id="tech-table">Технологические параметры производства</h2>
-  <table align="center" cellspacing="0" cellpadding="10" border="1" width="700px"
-    background="images/tech_bg.jpg" style="margin: 20px auto;">
+  <!-- ИЗМЕНЕНО: inline-стили заменены на классы -->
+  <table class="table-bg-image">
     <tr>
-      <td colspan="3" style="text-align: center; background-color: #e8f4f8; height: 50px;">
+      <td colspan="3" class="table-header">
         <strong>Технологические характеристики производства картонных коробок</strong>
       </td>
     </tr>
     <tr>
-      <td width="200px" style="vertical-align: top; padding: 15px;">
+      <td class="table-cell-left">
         <strong>Этапы производства:</strong><br><br>
         • <a href="#materials">Подготовка сырья</a><br>
         • <a href="#process">Основной процесс</a><br>
         • Контроль качества<br>
         • <a href="quality.html">Система качества</a>
       </td>
-      <td style="text-align: center; padding: 15px; background-color: #f9f9f9;">
+      <td class="cell-bg-image">
         <img src="images/tech_sample.jpg" width="200" alt="Технологический образец">
         <p><a href="documents/tech_specs.pdf" target="_blank">Скачать техническую документацию</a></p>
       </td>
-      <td width="250px" style="vertical-align: top; padding: 15px;">
+      <td class="table-cell-right">
         <strong>Технические показатели:</strong><br><br>
         • Точность резки: ±0.5 мм<br>
         • Скорость линии: 100 коробок/час<br>
@@ -160,7 +139,7 @@
       </td>
     </tr>
     <tr>
-      <td colspan="3" style="text-align: center; padding: 10px; background-color: #f0f8ff;">
+      <td colspan="3" class="table-footer">
         <strong>Контакты технического отдела:</strong><br>
         Email: <a href="mailto:tech@cardboard-factory.ru">tech@cardboard-factory.ru</a> | 
         Тел.: <a href="tel:+74957654321">+7 (495) 765-43-21</a>
@@ -168,13 +147,12 @@
     </tr>
   </table>
 
-  <!-- Ссылка наверх -->
-  <p style="text-align: center; margin-top: 30px;">
+  <!-- ИЗМЕНЕНО: inline-стили заменены на класс -->
+  <div class="page-footer-links">
     <a href="#top">Вернуться к началу страницы</a> | 
     <a href="index.html">На главную страницу</a>
-  </p>
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
