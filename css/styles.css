@@ -258,6 +258,51 @@ th {
   margin: 15px 0;
 }
 
+/* Классы для галереи (опционально) */
+.box-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 30px 0;
+  justify-content: center;
+}
+
+.box-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 300px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.box-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.box-card h4 {
+  color: #255080;
+  margin-top: 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* Класс для специальных миниатюр (опционально) */
+.miniature {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.miniature:hover {
+  border-color: #4772a3;
+}
+
 .image-caption {
   font-style: italic;
   color: #555;
@@ -479,6 +524,7 @@ li {
 nav ul li ul li { display: block; margin: 0; }
 nav ul li ul li a { color: #fff; white-space: nowrap; display: block; padding: 6px 12px; }
 nav a.active, nav a:focus, nav a:hover { background: #a8c3e1; color: #222; text-decoration: underline; border-radius: 4px; }
+
 
 
 
