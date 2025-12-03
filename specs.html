@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Характеристики коробок</title>
+  <title>Характеристики картонных коробок</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     table.bgimg {
@@ -10,58 +10,261 @@
       background-size: cover;
       border-collapse: collapse;
       width: 100%;
+      margin: 20px 0;
     }
-    table.bgimg td, table.bgimg th { border: 1px solid #666; padding: 10px; }
-    td.imgcell { background-image: url('cell_bg.jpg'); background-size: cover; }
+    table.bgimg td, table.bgimg th { 
+      border: 2px solid #555; 
+      padding: 15px; 
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+    td.imgcell { 
+      background-image: url('cell_bg.jpg'); 
+      background-size: cover;
+      text-align: center;
+    }
+    .box-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 30px 0;
+    }
+    .box-card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      width: 300px;
+      background: #f9f9f9;
+    }
+    .miniature {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border: 2px solid #ccc;
+      cursor: pointer;
+    }
+    figure {
+      text-align: center;
+      margin: 20px 0;
+    }
+    figcaption {
+      font-style: italic;
+      color: #666;
+      margin-top: 5px;
+    }
   </style>
 </head>
 <body>
 
-   <nav>
+  <nav>
     <ul>
-      <li><a href="index.html"  class="nav-link">Главная</a></li>
-      <li><a href="about.html"  class="nav-link">О заводе</a></li>
-      <li><a href="products.html"  class="nav-link">Продукция</a></li>
-      <li><a href="technologies.html"  class="nav-link">Технологии</a></li>
-      <li><a href="specs.html"  class="nav-link">Характеристики</a></li>
-      <li><a href="forms.html"  class="nav-link">Контакты</a></li>
+      <li><a href="index.html" class="nav-link">Главная</a></li>
+      <li><a href="about.html" class="nav-link">О заводе</a></li>
+      <li><a href="products.html" class="nav-link">Продукция</a></li>
+      <li><a href="technologies.html" class="nav-link">Технологии</a></li>
+      <li><a href="specs.html" class="nav-link active">Характеристики</a></li>
+      <li><a href="forms.html" class="nav-link">Контакты</a></li>
       <li>
         <a href="#">DOM и JS</a>
         <ul>
-          <li><a href="dom_read.html"  class="nav-link">Считываем DOM</a></li>
-          <li><a href="dom_translate.html"  class="nav-link">Кириллица → Латиница</a></li>
-          <li><a href="algorithm.html"  class="nav-link">Алгоритмическая задача</a></li>
+          <li><a href="dom_read.html" class="nav-link">Считываем DOM</a></li>
+          <li><a href="dom_translate.html" class="nav-link">Кириллица → Латиница</a></li>
+          <li><a href="algorithm.html" class="nav-link">Алгоритмическая задача</a></li>
         </ul>
       </li>
       <li><a href="https://yandex.ru" target="_blank" rel="noopener">Наш поставщик</a></li>
     </ul>
   </nav>
 
-  <h1>Таблица характеристик</h1>
+  <!-- Внутренняя навигация -->
+  <div id="top"></div>
+  <h1>Технические характеристики картонных коробок</h1>
+  
+  <p style="text-align: center; margin: 20px 0; background-color: #e8f4f8; padding: 10px;">
+    <a href="#types">Раздел 1: Типы коробок</a> | 
+    <a href="#materials">Раздел 2: Материалы</a> | 
+    <a href="#specs-table">Раздел 3: Сравнительная таблица</a> |
+    <a href="#gallery">Раздел 4: Галерея</a> |
+    <a href="#top">К началу страницы</a>
+  </p>
+
+  <!-- Раздел 1: Типы коробок со списками -->
+  <h2 id="types">Раздел 1: Основные типы коробок</h2>
+  
+  <h3>Классификация по назначению:</h3>
+  <ol>
+    <li>Транспортные коробки:
+      <ul>
+        <li>Стандартные (3-слойные)</li>
+        <li>Усиленные (5-слойные)</li>
+        <li>Влагостойкие</li>
+      </ul>
+    </li>
+    <li>Специализированные коробки:
+      <ul>
+        <li>Архивные (с ручками и этикетками)</li>
+        <li>Для переезда (усиленные)</li>
+        <li>Подарочные (цветные, с декором)</li>
+      </ul>
+    </li>
+    <li>Индивидуальные коробки:
+      <ul>
+        <li>С фирменной печатью</li>
+        <li>Нестандартных размеров</li>
+        <li>Особой формы</li>
+      </ul>
+    </li>
+  </ol>
+
+  <!-- Раздел 2: Материалы -->
+  <h2 id="materials">Раздел 2: Характеристики материалов</h2>
+  
+  <h3>Слои гофрокартона и их свойства:</h3>
+  <ul>
+    <li><strong>Трёхслойный картон (Т-23):</strong>
+      <ol>
+        <li>Наружный слой: крафт-бумага 150 г/м²</li>
+        <li>Гофрированный слой: флютинг В</li>
+        <li>Внутренний слой: крафт-бумага 150 г/м²</li>
+      </ol>
+    </li>
+    <li><strong>Пятислойный картон (П-31):</strong>
+      <ul>
+        <li>Дополнительная прочность</li>
+        <li>Улучшенная амортизация</li>
+        <li>Повышенная влагостойкость</li>
+      </ul>
+    </li>
+  </ul>
+
+  <!-- Большое изображение через миниатюру -->
+  <h3>Структура гофрокартона под микроскопом:</h3>
+  <figure>
+    <a href="images/cardboard_structure_big.jpg" target="_blank">
+      <img src="images/cardboard_structure_small.jpg" alt="Миниатюра: структура картона" 
+           width="100" style="border: 2px solid #009688;">
+    </a>
+    <figcaption>Микроструктура пятислойного гофрокартона. Кликните для увеличения (600×400px)</figcaption>
+  </figure>
+
+  <!-- Раздел 3: Таблица (основная таблица сайта) -->
+  <h2 id="specs-table">Раздел 3: Сравнительная таблица характеристик</h2>
+  
   <table class="bgimg">
     <tr>
-      <th>Тип</th>
-      <th>Размер (мм)</th>
+      <th>Тип коробки</th>
+      <th>Размеры (Д×Ш×В, мм)</th>
+      <th>Материал</th>
       <th>Изображение</th>
-      <th>Опции</th>
+      <th>Макс. нагрузка</th>
+      <th>Особенности</th>
       <th>Ссылка</th>
     </tr>
     <tr>
-      <td>Архивная</td>
+      <td><strong>Архивная стандарт</strong></td>
       <td>500×350×250</td>
-      <td class="imgcell"><img src="box1.jpg" width="80"></td>
-      <td><ul><li>Ручки</li><li>Этикетка</li></ul></td>
-      <td><a href="#order">Заказать</a></td>
+      <td>3-слойный, Т-24</td>
+      <td class="imgcell">
+        <img src="images/archive_box.jpg" width="80" alt="Архивная коробка">
+      </td>
+      <td>25 кг</td>
+      <td>
+        <ul>
+          <li>Пластиковые ручки</li>
+          <li>Прозрачное окно для этикетки</li>
+          <li>Крышка-клапан</li>
+        </ul>
+      </td>
+      <td><a href="forms.html#order" target="_blank">Заказать</a></td>
     </tr>
     <tr>
-      <td>Переездная</td>
+      <td><strong>Переездная усиленная</strong></td>
       <td>600×400×400</td>
-      <td><img src="box2.jpg" width="80"></td>
-      <td>Без ручек</td>
-      <td><a href="#order">Заказать</a></td>
+      <td>5-слойный, П-32</td>
+      <td class="imgcell">
+        <img src="images/moving_box.jpg" width="80" alt="Коробка для переезда">
+      </td>
+      <td>50 кг</td>
+      <td>
+        <ul>
+          <li>Усиленные углы</li>
+          <li>Влагостойкая пропитка</li>
+          <li>Маркировочные наклейки в комплекте</li>
+        </ul>
+      </td>
+      <td><a href="forms.html#order" target="_blank">Заказать</a></td>
+    </tr>
+    <tr>
+      <td><strong>Транспортная средняя</strong></td>
+      <td>400×300×300</td>
+      <td>3-слойный, Т-23</td>
+      <td class="imgcell">
+        <img src="images/transport_box.jpg" width="80" alt="Транспортная коробка">
+      </td>
+      <td>20 кг</td>
+      <td>
+        <ul>
+          <li>Стандартные клапаны</li>
+          <li>Возможность печати логотипа</li>
+          <li>Штабелируемая</li>
+        </ul>
+      </td>
+      <td>
+        <a href="details/transport_box.html">Подробнее</a><br>
+        <a href="forms.html#order">Заказать</a>
+      </td>
     </tr>
   </table>
-  <script src="script.js"></script>
 
+  <!-- Раздел 4: Галерея с изображениями и пояснениями -->
+  <h2 id="gallery">Раздел 4: Галерея продукции</h2>
+  
+  <div class="box-gallery">
+    <div class="box-card">
+      <h4>Коробка архивная с этикеткой</h4>
+      <figure>
+        <img src="images/archive_detail.jpg" alt="Архивная коробка" width="200">
+        <figcaption>Архивная коробка с прозрачным окном для маркировки</figcaption>
+      </figure>
+      <p><strong>Характеристики:</strong></p>
+      <ul>
+        <li>Вместимость: 40 л</li>
+        <li>Вес коробки: 800 г</li>
+        <li>Цвет: коричневый/белый</li>
+      </ul>
+    </div>
+    
+    <div class="box-card">
+      <h4>Усиленная коробка для переезда</h4>
+      <figure>
+        <img src="images/moving_detail.jpg" alt="Коробка для переезда" width="200">
+        <figcaption>Усиленная конструкция для тяжелых грузов</figcaption>
+      </figure>
+      <p><strong>Характеристики:</strong></p>
+      <ul>
+        <li>Вместимость: 90 л</li>
+        <li>Вес коробки: 1200 г</li>
+        <li>Усиление: углы и дно</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Еще одно большое изображение через миниатюру -->
+  <h3>Тестирование прочности на разрыв:</h3>
+  <figure>
+    <a href="images/strength_test_big.jpg" target="_blank">
+      <img src="images/strength_test_small.jpg" alt="Миниатюра: тест прочности" 
+           class="miniature">
+    </a>
+    <figcaption>Лабораторный тест на прочность картонной коробки. Кликните для просмотра полного изображения (600×400px)</figcaption>
+  </figure>
+
+  <!-- Ссылка наверх -->
+  <p style="text-align: center; margin-top: 30px; padding: 15px; background-color: #f5f5f5;">
+    <a href="#top">Вернуться к началу страницы</a> | 
+    <a href="index.html">На главную страницу</a> |
+    <a href="forms.html">Заказать коробки</a> |
+    <a href="products.html">Вся продукция</a>
+  </p>
+
+  <script src="script.js"></script>
 </body>
 </html>
