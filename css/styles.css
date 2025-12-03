@@ -187,6 +187,45 @@ th {
   background-color: rgba(255, 255, 255, 0.92);
 }
 
+/* Дополнительные классы для таблицы */
+.table-header {
+  text-align: center;
+  background-color: #e8f4f8;
+  height: 50px;
+  vertical-align: middle;
+  font-size: 1.1em;
+}
+
+.table-cell-left {
+  vertical-align: top;
+  padding: 15px;
+  width: 200px;
+}
+
+.table-cell-right {
+  vertical-align: top;
+  padding: 15px;
+  width: 250px;
+}
+
+.table-footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #f0f8ff;
+}
+
+/* Класс для технологических изображений (опционально) */
+.tech-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
 /* Ячейка с фоновым изображением */
 .cell-bg-image {
   background-image: url('images/cell-bg.jpg');
@@ -440,5 +479,6 @@ li {
 nav ul li ul li { display: block; margin: 0; }
 nav ul li ul li a { color: #fff; white-space: nowrap; display: block; padding: 6px 12px; }
 nav a.active, nav a:focus, nav a:hover { background: #a8c3e1; color: #222; text-decoration: underline; border-radius: 4px; }
+
 
 
