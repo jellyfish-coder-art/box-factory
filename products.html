@@ -2,62 +2,229 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Продукция</title>
+  <title>Продукция завода картонных коробок</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Навигация (та же, что на главной) -->
-   <nav>
+  <!-- Навигация -->
+  <nav>
     <ul>
-      <li><a href="index.html"  class="nav-link">Главная</a></li>
-      <li><a href="about.html"  class="nav-link">О заводе</a></li>
-      <li><a href="products.html"  class="nav-link">Продукция</a></li>
-      <li><a href="technologies.html"  class="nav-link">Технологии</a></li>
-      <li><a href="specs.html"  class="nav-link">Характеристики</a></li>
-      <li><a href="forms.html"  class="nav-link">Контакты</a></li>
+      <li><a href="index.html" class="nav-link">Главная</a></li>
+      <li><a href="about.html" class="nav-link">О заводе</a></li>
+      <li><a href="products.html" class="nav-link active">Продукция</a></li>
+      <li><a href="technologies.html" class="nav-link">Технологии</a></li>
+      <li><a href="specs.html" class="nav-link">Характеристики</a></li>
+      <li><a href="forms.html" class="nav-link">Контакты</a></li>
       <li>
         <a href="#">DOM и JS</a>
         <ul>
-          <li><a href="dom_read.html"  class="nav-link">Считываем DOM</a></li>
-          <li><a href="dom_translate.html"  class="nav-link">Кириллица → Латиница</a></li>
-          <li><a href="algorithm.html"  class="nav-link">Алгоритмическая задача</a></li>
+          <li><a href="dom_read.html" class="nav-link">Считываем DOM</a></li>
+          <li><a href="dom_translate.html" class="nav-link">Кириллица → Латиница</a></li>
+          <li><a href="algorithm.html" class="nav-link">Алгоритмическая задача</a></li>
         </ul>
       </li>
       <li><a href="https://yandex.ru" target="_blank" rel="noopener">Наш поставщик</a></li>
     </ul>
   </nav>
 
-  <h1>Продукция</h1>
-  <ul>
-    <li><a href="#box-types">Виды коробок</a></li>
-    <li><a href="#materials">Материалы</a></li>
-  </ul>
+  <!-- Главный заголовок и внутренняя навигация -->
+  <div id="top"></div>
+  <h1>Продукция завода картонных коробок</h1>
+  
+  <p style="text-align: center; margin: 20px 0; background-color: #f0f8ff; padding: 10px;">
+    <a href="#box-types">Раздел 1: Виды коробок</a> | 
+    <a href="#materials">Раздел 2: Материалы</a> | 
+    <a href="#custom">Раздел 3: Индивидуальные заказы</a> |
+    <a href="#prices">Раздел 4: Цены и тиражи</a> |
+    <a href="#top">К началу страницы</a>
+  </p>
 
-  <h2 id="box-types">Виды коробок</h2>
+  <!-- Раздел 1: Виды коробок -->
+  <h2 id="box-types">Раздел 1: Виды производимых коробок</h2>
+  
+  <h3>Основные категории продукции:</h3>
   <ol>
-    <li>Стандартные</li>
-    <li>Архивные</li>
-    <li>Для переезда</li>
-  </ol>
-  <ul>
-    <li>Архивные коробки:
+    <li>Стандартные транспортные коробки:
       <ul>
-        <li>С ручками</li>
-        <li>С местом для этикетки</li>
+        <li>Размеры от S до XL</li>
+        <li>Клапаны стандартные</li>
+        <li>Белая или коричневая печать</li>
       </ul>
     </li>
-    <li>Пятислойные особо прочные</li>
-  </ul>
+    <li>Архивные коробки:
+      <ul>
+        <li>С пластиковыми ручками</li>
+        <li>С прозрачным окном для этикетки</li>
+        <li>С крышкой на магнитах</li>
+      </ul>
+    </li>
+    <li>Коробки для переезда:
+      <ul>
+        <li>Усиленные углы</li>
+        <li>Влагостойкая пропитка</li>
+        <li>Комплект с маркировочными наклейками</li>
+      </ul>
+    </li>
+    <li>Подарочная упаковка:
+      <ul>
+        <li>Цветной картон</li>
+        <li>Лакированная поверхность</li>
+        <li>Декоративные ленты в комплекте</li>
+      </ul>
+    </li>
+  </ol>
 
-  <h2 id="materials">Материалы</h2>
+  <!-- Изображение продукции -->
+  <h3>Наша продукция на складе:</h3>
+  <figure style="text-align: center;">
+    <a href="big_products.jpg" target="_blank">
+      <img src="small_products.jpg" alt="Миниатюра: склад продукции" width="100" style="border: 1px solid #ccc;">
+    </a>
+    <figcaption>Готовые коробки на складе завода. Кликните для просмотра в полном размере (600×400px).</figcaption>
+  </figure>
+
+  <!-- Раздел 2: Материалы -->
+  <h2 id="materials">Раздел 2: Используемые материалы</h2>
+  
+  <h3>Качество материалов - гарантия прочности:</h3>
   <ul>
-    <li>Трёхслойный картон</li>
-    <li>Пятислойный картон</li>
-    <li>Безопасные клеи и краски</li>
+    <li><strong>Трёхслойный гофрокартон</strong> (Т-23, Т-24):
+      <ul>
+        <li>Толщина: 3-4 мм</li>
+        <li>Нагрузка: до 20 кг</li>
+        <li>Применение: легкие грузы</li>
+      </ul>
+    </li>
+    <li><strong>Пятислойный гофрокартон</strong> (П-31, П-32):
+      <ul>
+        <li>Толщина: 6-8 мм</li>
+        <li>Нагрузка: до 50 кг</li>
+        <li>Применение: тяжелые грузы</li>
+      </ul>
+    </li>
+    <li><strong>Экологически безопасные компоненты:</strong>
+      <ul>
+        <li>Водорастворимые клеи</li>
+        <li>Соевые краски</li>
+        <li>Биоразлагаемые покрытия</li>
+      </ul>
+    </li>
   </ul>
 
-  <a href="#top">Наверх</a>
-  <script src="script.js"></script>
+  <!-- Таблица с продукцией -->
+  <h3>Ассортимент и характеристики:</h3>
+  <table align="center" cellspacing="0" cellpadding="10" border="1" width="700px"
+    background="030_images/products_bg.jpg" style="margin: 20px auto;">
+    
+    <tr>
+      <td colspan="4" bgcolor="LightGreen" height="50px" style="text-align: center; font-size: 18px;">
+        <a href="index.html" style="color: darkgreen; font-weight: bold;">На главную</a> | 
+        Каталог продукции завода картонных коробок
+      </td>
+    </tr>
 
+    <tr>
+      <td height="200px" width="150px" style="vertical-align: top; padding: 15px;">
+        <strong>Категории товаров:</strong><br><br>
+        • <a href="#box-types">Виды коробок</a><br>
+        • <a href="#materials">Материалы</a><br>
+        • <a href="#custom">Индивидуальные</a><br>
+        • <a href="#prices">Цены</a><br>
+        • <a href="specs.html">Характеристики</a>
+      </td>
+
+      <td bgcolor="LightCyan" width="300px" background="030_images/products_bg.jpg" style="text-align: center; padding: 15px;">
+        <img src="030_images/box_sample.png" width="250" alt="Образец коробки">
+        <p style="font-size: 14px; margin-top: 10px; font-weight: bold;">
+          Коробка "Стандарт L"<br>
+          Размер: 400×300×300 мм<br>
+          <a href="samples/standard.pdf" target="_blank">Скачать спецификацию</a>
+        </p>
+      </td>
+
+      <td width="250px" style="vertical-align: top; padding: 15px;">
+        <strong>Популярные модели:</strong><br><br>
+        • Mini (200×150×100) - от 15 руб.<br>
+        • Medium (400×300×300) - от 35 руб.<br>
+        • Large (600×400×400) - от 60 руб.<br>
+        • <a href="catalog.pdf" target="_blank">Полный каталог (PDF)</a><br>
+        • <a href="forms.html#order">Заказать образцы</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="center" valign="middle" colspan="3" height="100px" style="padding: 15px; background-color: #f0fff0;">
+        <strong>Специальные предложения:</strong><br>
+        Скидка 10% на первый заказ от 1000 коробок<br>
+        Бесплатная доставка по Москве при заказе от 5000 руб.<br>
+        <a href="promo.html">Акции и скидки</a> | 
+        <a href="wholesale.html">Оптовым покупателям</a>
+      </td>
+    </tr>
+  </table>
+
+  <!-- Раздел 3: Индивидуальные заказы -->
+  <h2 id="custom">Раздел 3: Индивидуальные заказы</h2>
+  
+  <h3>Производство по вашим требованиям:</h3>
+  <ul>
+    <li>Любые размеры и формы</li>
+    <li>Печать логотипа и информации
+      <ul>
+        <li>Флексопечать до 4 цветов</li>
+        <li>Шелкография</li>
+        <li>Цифровая печать</li>
+      </ul>
+    </li>
+    <li>Специальная перфорация</li>
+    <li>Упаковка под ключ</li>
+  </ul>
+
+  <!-- Изображение индивидуального заказа -->
+  <h3>Пример индивидуального заказа:</h3>
+  <figure style="text-align: center;">
+    <a href="big_custom.jpg" target="_blank">
+      <img src="small_custom.jpg" alt="Миниатюра: индивидуальный заказ" width="100" style="border: 1px solid #ccc;">
+    </a>
+    <figcaption>Коробки с логотипом заказчика. Кликните для увеличения.</figcaption>
+  </figure>
+
+  <!-- Раздел 4: Цены и тиражи -->
+  <h2 id="prices">Раздел 4: Цены и минимальные тиражи</h2>
+  
+  <h3>Стоимость производства:</h3>
+  <ol>
+    <li>Малые тиражи (100-500 шт.):
+      <ul>
+        <li>Стандартные коробки: от 25 руб./шт.</li>
+        <li>С печатью: +15 руб./шт.</li>
+        <li>Срок: 5-7 рабочих дней</li>
+      </ul>
+    </li>
+    <li>Средние тиражи (500-5000 шт.):
+      <ul>
+        <li>Стандартные коробки: от 18 руб./шт.</li>
+        <li>С печатью: +10 руб./шт.</li>
+        <li>Срок: 10-14 рабочих дней</li>
+      </ul>
+    </li>
+    <li>Крупные тиражи (от 5000 шт.):
+      <ul>
+        <li>Индивидуальный расчет</li>
+        <li>Скидки до 30%</li>
+        <li>Срок согласовывается</li>
+      </ul>
+    </li>
+  </ol>
+
+  <!-- Ссылка наверх -->
+  <p style="text-align: center; margin-top: 30px; padding: 15px; background-color: #f5f5f5;">
+    <a href="#top">Вернуться к началу страницы</a> | 
+    <a href="index.html">На главную страницу</a> |
+    <a href="forms.html#order">Оформить заказ</a> |
+    <a href="catalog.pdf" target="_blank">Скачать каталог (PDF)</a>
+  </p>
+
+  <script src="script.js"></script>
 </body>
 </html>
