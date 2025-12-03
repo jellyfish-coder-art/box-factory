@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Технологии производства</title>
+  <title>Технологии производства картонных коробок</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
     .tech-image {
@@ -19,40 +19,84 @@
       border-radius: 4px;
       padding: 3px 7px;
     }
+    figure {
+      text-align: center;
+      margin: 20px 0;
+    }
+    figcaption {
+      font-style: italic;
+      color: #555;
+      margin-top: 5px;
+    }
   </style>
 </head>
 <body>
   <nav>
+    <a href="index.html" style="float: left; margin-right: 20px;">
+      <img src="images/logo_small.png" alt="Логотип завода" width="80">
+    </a>
     <ul>
-      <li><a href="index.html"  class="nav-link">Главная</a></li>
-      <li><a href="about.html"  class="nav-link">О заводе</a></li>
-      <li><a href="products.html"  class="nav-link">Продукция</a></li>
-      <li><a href="technologies.html"  class="nav-link">Технологии</a></li>
-      <li><a href="specs.html"  class="nav-link">Характеристики</a></li>
-      <li><a href="forms.html"  class="nav-link">Контакты</a></li>
+      <li><a href="index.html" class="nav-link">Главная</a></li>
+      <li><a href="about.html" class="nav-link">О заводе</a></li>
+      <li><a href="products.html" class="nav-link">Продукция</a></li>
+      <li><a href="technologies.html" class="nav-link active">Технологии</a></li>
+      <li><a href="specs.html" class="nav-link">Характеристики</a></li>
+      <li><a href="forms.html" class="nav-link">Контакты</a></li>
       <li>
         <a href="#">DOM и JS</a>
         <ul>
-          <li><a href="dom_read.html"  class="nav-link">Считываем DOM</a></li>
-          <li><a href="dom_translate.html"  class="nav-link">Кириллица → Латиница</a></li>
-          <li><a href="algorithm.html"  class="nav-link">Алгоритмическая задача</a></li>
+          <li><a href="dom_read.html" class="nav-link">Считываем DOM</a></li>
+          <li><a href="dom_translate.html" class="nav-link">Кириллица → Латиница</a></li>
+          <li><a href="algorithm.html" class="nav-link">Алгоритмическая задача</a></li>
         </ul>
       </li>
       <li><a href="https://yandex.ru" target="_blank" rel="noopener">Наш поставщик</a></li>
     </ul>
   </nav>
 
+  <!-- Внутренняя навигация -->
+  <div id="top"></div>
   <h1>Технологии производства картонных коробок</h1>
+  
+  <p style="text-align: center; margin: 20px 0; background-color: #f0f8ff; padding: 10px;">
+    <a href="#materials">Раздел 1: Материалы</a> | 
+    <a href="#equipment">Раздел 2: Оборудование</a> | 
+    <a href="#process">Раздел 3: Процесс</a> |
+    <a href="#tech-table">Раздел 4: Техпараметры</a> |
+    <a href="#top">К началу страницы</a>
+  </p>
 
   <p>Наш завод использует современные технологии и оборудование для изготовления качественной продукции.</p>
 
+  <!-- Раздел 1: Материалы с вложенными списками -->
   <h2 id="materials">Используемые материалы</h2>
   <ul>
-    <li>Картон высокого качества (трёх- и пятислойный)</li>
-    <li>Экологичные клеевые составы</li>
+    <li>Картон высокого качества:
+      <ul>
+        <li>Трёхслойный (Т-23, Т-24)</li>
+        <li>Пятислойный (П-31, П-32)</li>
+        <li>Микрогофрокартон</li>
+      </ul>
+    </li>
+    <li>Экологичные клеевые составы:
+      <ol>
+        <li>Водорастворимые клеи</li>
+        <li>Биоразлагаемые составы</li>
+      </ol>
+    </li>
     <li>Безопасные и нетоксичные краски для печати фирменных логотипов</li>
   </ul>
 
+  <!-- Большое изображение через миниатюру -->
+  <h3>Полная производственная линия:</h3>
+  <figure>
+    <a href="images/production_line_big.jpg" target="_blank">
+      <img src="images/production_line_small.jpg" alt="Миниатюра: производственная линия" width="100" style="border: 2px solid #0066cc;">
+    </a>
+    <figcaption>Автоматизированная линия производства. Кликните для просмотра в полном размере (600×400px)</figcaption>
+  </figure>
+
+  <!-- Раздел 2: Оборудование -->
   <h2 id="equipment">Оборудование</h2>
   <p>Производственный процесс автоматизирован с использованием современного оборудования:</p>
   <ul>
@@ -62,9 +106,18 @@
     <li>Системы контроля качества на каждом этапе производства</li>
   </ul>
 
-  <img src="images/equipment1.jpg" alt="Резательный станок" class="tech-image" />
-  <img src="images/equipment2.jpg" alt="Печатающая машина" class="tech-image" />
+  <!-- Изображения с пояснениями -->
+  <figure>
+    <img src="images/equipment1.jpg" alt="Резательный станок" class="tech-image" />
+    <figcaption>Современный резательный станок с ЧПУ для точной резки картона</figcaption>
+  </figure>
 
+  <figure>
+    <img src="images/equipment2.jpg" alt="Печатающая машина" class="tech-image" />
+    <figcaption>Флексографическая печатная машина для нанесения логотипов</figcaption>
+  </figure>
+
+  <!-- Раздел 3: Процесс -->
   <h2 id="process">Процесс производства</h2>
   <ol>
     <li>Поступление и проверка сырья</li>
@@ -74,9 +127,51 @@
     <li>Отправка клиенту и логистика</li>
   </ol>
 
-  <p><a href="#top">Наверх</a></p>
+  <!-- Таблица -->
+  <h2 id="tech-table">Технологические параметры производства</h2>
+  <table align="center" cellspacing="0" cellpadding="10" border="1" width="700px"
+    background="images/tech_bg.jpg" style="margin: 20px auto;">
+    <tr>
+      <td colspan="3" style="text-align: center; background-color: #e8f4f8; height: 50px;">
+        <strong>Технологические характеристики производства картонных коробок</strong>
+      </td>
+    </tr>
+    <tr>
+      <td width="200px" style="vertical-align: top; padding: 15px;">
+        <strong>Этапы производства:</strong><br><br>
+        • <a href="#materials">Подготовка сырья</a><br>
+        • <a href="#process">Основной процесс</a><br>
+        • Контроль качества<br>
+        • <a href="quality.html">Система качества</a>
+      </td>
+      <td style="text-align: center; padding: 15px; background-color: #f9f9f9;">
+        <img src="images/tech_sample.jpg" width="200" alt="Технологический образец">
+        <p><a href="documents/tech_specs.pdf" target="_blank">Скачать техническую документацию</a></p>
+      </td>
+      <td width="250px" style="vertical-align: top; padding: 15px;">
+        <strong>Технические показатели:</strong><br><br>
+        • Точность резки: ±0.5 мм<br>
+        • Скорость линии: 100 коробок/час<br>
+        • Энергопотребление: 15 кВт/ч<br>
+        • <a href="certificates/quality.pdf" target="_blank">Сертификат качества ISO 9001</a><br>
+        • <a href="https://en.wikipedia.org/wiki/Corrugated_fiberboard" target="_blank">Технология гофрокартона</a>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3" style="text-align: center; padding: 10px; background-color: #f0f8ff;">
+        <strong>Контакты технического отдела:</strong><br>
+        Email: <a href="mailto:tech@cardboard-factory.ru">tech@cardboard-factory.ru</a> | 
+        Тел.: <a href="tel:+74957654321">+7 (495) 765-43-21</a>
+      </td>
+    </tr>
+  </table>
 
-<script src="script.js"></script>
+  <!-- Ссылка наверх -->
+  <p style="text-align: center; margin-top: 30px;">
+    <a href="#top">Вернуться к началу страницы</a> | 
+    <a href="index.html">На главную страницу</a>
+  </p>
 
+  <script src="script.js"></script>
 </body>
 </html>
