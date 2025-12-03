@@ -1,69 +1,162 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
   <meta charset="UTF-8">
-  <title>Таблицы</title>
+  <title>Характеристики картонных коробок</title>
   <link rel="stylesheet" href="styles.css">
-<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=TNVXJ8-4gGB5WPcZRYKesoBxDiOoaZ9FplaxKfruJsZXYzuZ5g3xcHd64mMoZ709MQ43abTqVY9LNqPx4PbJOiRJAhkv7fEJR7ppf0LV8fU" charset="UTF-8"></script></head>
-
+</head>
 <body>
+  <!-- Навигация -->
   <nav>
     <ul>
-      <li><a href="index.html"  class="nav-link">Главная</a></li>
-      <li><a href="about.html"  class="nav-link">О заводе</a></li>
-      <li><a href="products.html"  class="nav-link">Продукция</a></li>
-      <li><a href="technologies.html"  class="nav-link">Технологии</a></li>
-      <li><a href="specs.html"  class="nav-link">Характеристики</a></li>
-      <li><a href="forms.html"  class="nav-link">Контакты</a></li>
+      <li><a href="index.html" class="nav-link">Главная</a></li>
+      <li><a href="about.html" class="nav-link">О заводе</a></li>
+      <li><a href="products.html" class="nav-link">Продукция</a></li>
+      <li><a href="technologies.html" class="nav-link">Технологии</a></li>
+      <li><a href="specs.html" class="nav-link active">Характеристики</a></li>
+      <li><a href="forms.html" class="nav-link">Контакты</a></li>
       <li>
         <a href="#">DOM и JS</a>
         <ul>
-          <li><a href="dom_read.html"  class="nav-link">Считываем DOM</a></li>
-          <li><a href="dom_translate.html"  class="nav-link">Кириллица → Латиница</a></li>
-          <li><a href="algorithm.html"  class="nav-link">Алгоритмическая задача</a></li>
+          <li><a href="dom_read.html" class="nav-link">Считываем DOM</a></li>
+          <li><a href="dom_translate.html" class="nav-link">Кириллица → Латиница</a></li>
+          <li><a href="algorithm.html" class="nav-link">Алгоритмическая задача</a></li>
         </ul>
       </li>
       <li><a href="https://yandex.ru" target="_blank" rel="noopener">Наш поставщик</a></li>
     </ul>
   </nav>
 
-  <h3 align="center">Таблицы</h3>
+  <!-- Главный заголовок и внутренняя навигация -->
+  <div id="top"></div>
+  <h1>Характеристики картонных коробок</h1>
+  
+  <p style="text-align: center; margin: 20px 0;">
+    <a href="#section1">Раздел 1: Размеры</a> | 
+    <a href="#section2">Раздел 2: Материалы</a> | 
+    <a href="#section3">Раздел 3: Технические параметры</a> |
+    <a href="#top">К началу страницы</a>
+  </p>
 
+  <!-- Раздел 1: Размеры -->
+  <h2 id="section1">Раздел 1: Размеры картонных коробок</h2>
+  
+  <h3>Стандартные размеры (внутренние, мм):</h3>
+  <ol>
+    <li>Малые коробки:
+      <ul>
+        <li>200×150×100 мм</li>
+        <li>250×200×150 мм</li>
+        <li>300×200×200 мм</li>
+      </ul>
+    </li>
+    <li>Средние коробки:
+      <ul>
+        <li>400×300×300 мм</li>
+        <li>500×400×400 мм</li>
+        <li>600×400×400 мм</li>
+      </ul>
+    </li>
+    <li>Крупные коробки:
+      <ul>
+        <li>800×600×600 мм</li>
+        <li>1000×800×800 мм</li>
+        <li>1200×800×800 мм</li>
+      </ul>
+    </li>
+  </ol>
+
+  <!-- Изображение с миниатюрой -->
+  <h3>Измерение размеров коробок на производстве:</h3>
+  <figure style="text-align: center;">
+    <a href="big_measurement.jpg" target="_blank">
+      <img src="small_measurement.jpg" alt="Миниатюра: измерение коробки" width="100" style="border: 1px solid #ccc;">
+    </a>
+    <figcaption>Контроль размеров картонной коробки. Кликните для просмотра в полном размере (600×400px).</figcaption>
+  </figure>
+
+  <!-- Раздел 2: Материалы -->
+  <h2 id="section2">Раздел 2: Материалы</h2>
+  
+  <h3>Виды картона для производства:</h3>
+  <ul>
+    <li><strong>Гофрокартон 3-слойный</strong> (Т-23, Т-24, Т-25)</li>
+    <li><strong>Гофрокартон 5-слойный</strong> (П-31, П-32, П-33, П-34)</li>
+    <li><strong>Микрогофрокартон</strong> (Е-флюта, F-флюта)</li>
+    <li><strong>Дизайнерский картон</strong> (с покрытием, ламинация)</li>
+  </ul>
+
+  <!-- Таблица -->
+  <h3>Сравнительная таблица характеристик:</h3>
   <table align="center" cellspacing="0" cellpadding="10" border="1" width="700px"
-    background="../030_images/background.jpg">
-
+    background="030_images/background.jpg" style="margin: 20px auto;">
+    
     <tr>
-      <td colspan="3" bgcolor="Aqua" background="../030_images/background.jpg" height="50px">
-        Логотип, название
-      </td>
-      <td rowspan="3">rowspan="3"</td>
-    </tr>
-
-
-    <tr>
-      <td height="200px">
-        Меню
-      </td>
-
-      <td bgcolor="Fuchsia" width="300px" background="../030_images/background.jpg">
-        <img src="../030_images/perl.gif" width="250">
-      </td>
-
-      <td>
-        Дополнительная информация
+      <td colspan="4" bgcolor="Aqua" height="50px" style="text-align: center;">
+        <a href="index.html" style="color: blue; font-weight: bold;">На главную</a> | 
+        Технические характеристики картонных коробок
       </td>
     </tr>
 
+    <tr>
+      <td height="200px" width="150px" style="vertical-align: top;">
+        <strong>Меню характеристик:</strong><br>
+        • <a href="#section1">Размеры</a><br>
+        • <a href="#section2">Материалы</a><br>
+        • <a href="#section3">Параметры</a><br>
+        • <a href="products.html">Продукция</a>
+      </td>
+
+      <td bgcolor="Fuchsia" width="300px" background="030_images/background.jpg" style="text-align: center;">
+        <img src="030_images/perl.gif" width="250" alt="Пример гофрокартона">
+        <p style="font-size: 12px; margin-top: 5px;">Структура гофрокартона</p>
+      </td>
+
+      <td width="250px" style="vertical-align: top;">
+        <strong>Дополнительная информация:</strong><br><br>
+        • Максимальная нагрузка: до 50 кг<br>
+        • Влагостойкость: класс 2-3<br>
+        • Температурный режим: -40°C до +70°C<br>
+        • <a href="technologies.html">Подробнее о технологиях</a>
+      </td>
+    </tr>
 
     <tr>
-      <td align=right valign=top  colspan="3" height="100px">
-        Обратная связь и выходные данные (вверху и справа)
+      <td align="right" valign="top" colspan="3" height="100px" style="padding: 10px;">
+        <strong>Обратная связь:</strong><br>
+        Телефон: <a href="tel:+78001234567">8-800-123-45-67</a><br>
+        Email: <a href="mailto:info@boxfactory.ru">info@boxfactory.ru</a><br>
+        <a href="forms.html">Форма обратной связи</a>
       </td>
     </tr>
   </table>
- <a href="#top">Наверх</a> 
- <script src="script.js"></script>
 
+  <!-- Раздел 3: Технические параметры -->
+  <h2 id="section3">Раздел 3: Технические параметры</h2>
+  
+  <h3>Физико-механические свойства:</h3>
+  <ul>
+    <li>Прочность на сжатие: 30-150 kN/m</li>
+    <li>Сопротивление продавливанию: 800-2500 kPa</li>
+    <li>Жесткость при изгибе: 7-25 mN·m</li>
+    <li>Влажность: 8-12%</li>
+  </ul>
+
+  <!-- Еще одно изображение -->
+  <h3>Тестирование прочности:</h3>
+  <figure style="text-align: center;">
+    <a href="big_test.jpg" target="_blank">
+      <img src="small_test.jpg" alt="Миниатюра: тест прочности" width="100" style="border: 1px solid #ccc;">
+    </a>
+    <figcaption>Испытание коробки на прочность. Кликните для увеличения.</figcaption>
+  </figure>
+
+  <!-- Ссылка наверх -->
+  <p style="text-align: center; margin-top: 30px;">
+    <a href="#top">Вернуться к началу страницы</a> | 
+    <a href="index.html">На главную страницу</a>
+  </p>
+
+  <script src="script.js"></script>
 </body>
 </html>
