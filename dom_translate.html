@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Изменяем кириллицу на латиницу по клику</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <nav>
+    <ul>
+      <li><a href="index.html"  class="nav-link">Главная</a></li>
+      <li><a href="about.html"  class="nav-link">О заводе</a></li>
+      <li><a href="products.html"  class="nav-link">Продукция</a></li>
+      <li><a href="technologies.html"  class="nav-link">Технологии</a></li>
+      <li><a href="specs.html"  class="nav-link">Характеристики</a></li>
+      <li><a href="forms.html"  class="nav-link">Контакты</a></li>
+      <li>
+        <a href="#">DOM и JS</a>
+        <ul>
+          <li><a href="dom_read.html"  class="nav-link">Считываем DOM</a></li>
+          <li><a href="dom_translate.html"  class="nav-link">Кириллица → Латиница</a></li>
+          <li><a href="algorithm.html"  class="nav-link">Алгоритмическая задача</a></li>
+        </ul>
+      </li>
+      <li><a href="https://yandex.ru" target="_blank" rel="noopener">Наш поставщик</a></li>
+    </ul>
+  </nav>
+
+  <h1>Изменяем кириллицу на латиницу по клику</h1>
+  <h2>Паспортные данные:</h2>
+  <p id="surname"><b>Фамилия:</b> Тухватшина</p>
+  <p id="name"><b>Имя:</b> Эльвина</p>
+  <p id="year"><b>Год рождения:</b> 2005</p>
+  <button onclick="translateToLatin()">Перевести на латиницу</button>
+  <p id="result"></p>
+
+  <script>
+    // Простейшая таблица замены букв (можно расширить по стандарту ICAO)
+    const cyrillicToLatin = {
+      'А':'A','а':'a','Б':'B','б':'b','В':'V','в':'v','Г':'G','г':'g',
+      'Д':'D','д':'d','Е':'E','е':'e','Ё':'E','ё':'e','Ж':'Zh','ж':'zh',
+      'З':'Z','з':'z','И':'I','и':'i','Й':'Y','й':'y','К':'K','к':'k',
+      'Л':'L','л':'l','М':'M','м':'m','Н':'N','н':'n','О':'O','о':'o',
+      'П':'P','п':'p','Р':'R','р':'r','С':'S','с':'s','Т':'T','т':'t',
+      'У':'U','у':'u','Ф':'F','ф':'f','Х':'Kh','х':'kh','Ц':'Ts','ц':'ts',
+      'Ч':'Ch','ч':'ch','Ш':'Sh','ш':'sh','Щ':'Sch','щ':'sch','Ы':'Y','ы':'y','ъ':'','ь':'',
+      'Э':'E','э':'e','Ю':'Yu','ю':'yu','Я':'Ya','я':'ya'
+    };
+
+    function translit(str) {
+      return str.replace(/[А-яЁё]/g, function(char) {
+        return cyrillicToLatin[char] || char;
+      });
+    }
+
+    function translateToLatin() {
+      const surname = document.getElementById('surname');
+      const name = document.getElementById('name');
+      const year = document.getElementById('year');
+
+      surname.innerHTML = '<b>Фамилия:</b> ' + translit('Тухватшина');
+      name.innerHTML = '<b>Имя:</b> ' + translit('Эльвина');
+      year.innerHTML = '<b>Год рождения:</b> 2005';
+      document.getElementById('result').textContent =
+        'Данные переведены на латиницу: ' +
+        translit('Тухватшина') + ' ' + translit('Эльвина') + ', 2005';
+    }
+  </script>
+ 
+<script src="script.js"></script>
+
+</body>
+</html>

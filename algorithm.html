@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Решение алгоритмической задачи</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html"  class="nav-link">Главная</a></li>
+      <li><a href="about.html"  class="nav-link">О заводе</a></li>
+      <li><a href="products.html"  class="nav-link">Продукция</a></li>
+      <li><a href="technologies.html"  class="nav-link">Технологии</a></li>
+      <li><a href="specs.html"  class="nav-link">Характеристики</a></li>
+      <li><a href="forms.html"  class="nav-link">Контакты</a></li>
+      <li>
+        <a href="#">DOM и JS</a>
+        <ul>
+          <li><a href="dom_read.html"  class="nav-link">Считываем DOM</a></li>
+          <li><a href="dom_translate.html"  class="nav-link">Кириллица → Латиница</a></li>
+          <li><a href="algorithm.html"  class="nav-link">Алгоритмическая задача</a></li>
+        </ul>
+      </li>
+      <li><a href="https://yandex.ru" target="_blank" rel="noopener">Наш поставщик</a></li>
+    </ul>
+  </nav>
+
+  <h1>Решение алгоритмической задачи</h1>
+  <p>Вычислить значение функции Z = 1 / (X * Y) для введённых X и Y</p>
+  <form id="calcForm" onsubmit="return false;">
+    <label>X: <input type="number" id="inputX" step="any" required></label><br>
+    <label>Y: <input type="number" id="inputY" step="any" required></label><br>
+    <button onclick="calculateZ()">Вычислить</button>
+  </form>
+  <p id="result"></p>
+  <script>
+    function calculateZ() {
+      const x = parseFloat(document.getElementById('inputX').value);
+      const y = parseFloat(document.getElementById('inputY').value);
+      if (isNaN(x) || isNaN(y) || x === 0 || y === 0) {
+        document.getElementById('result').textContent = "Ошибка: X и Y должны быть не нулём.";
+        return;
+      }
+      document.getElementById('result').textContent = "Z = 1 / (" + x + " * " + y + ") = " + (1/(x*y));
+    }
+  </script>
+  
+<script src="script.js"></script>
+
+</body>
+</html>

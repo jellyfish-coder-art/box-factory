@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Контакты и заказ</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+    <ul>
+      <li><a href="index.html"  class="nav-link">Главная</a></li>
+      <li><a href="about.html"  class="nav-link">О заводе</a></li>
+      <li><a href="products.html"  class="nav-link">Продукция</a></li>
+      <li><a href="technologies.html"  class="nav-link">Технологии</a></li>
+      <li><a href="specs.html"  class="nav-link">Характеристики</a></li>
+      <li><a href="forms.html"  class="nav-link">Контакты</a></li>
+      <li>
+        <a href="#">DOM и JS</a>
+        <ul>
+          <li><a href="dom_read.html"  class="nav-link">Считываем DOM</a></li>
+          <li><a href="dom_translate.html"  class="nav-link">Кириллица → Латиница</a></li>
+          <li><a href="algorithm.html"  class="nav-link">Алгоритмическая задача</a></li>
+        </ul>
+      </li>
+      <li><a href="https://yandex.ru" target="_blank" rel="noopener">Наш поставщик</a></li>
+    </ul>
+  </nav>
+
+  <h1>Контактная форма</h1>
+  <form action="https://example.com/submit" method="post">
+    <label>Фамилия: <input type="text" name="lastname" required></label><br>
+    <label>Имя: <input type="text" name="firstname" required></label><br>
+    <label>Телефон: <input type="tel" name="phone"></label><br>
+    <label>Email: <input type="email" name="email"></label><br>
+    <label>Дата отправки: <input type="date" name="date"></label><br>
+    <button type="submit">Отправить</button>
+  </form>
+
+  <h2>Оформить заказ коробки</h2>
+  <form action="https://example.com/order" method="post">
+    <label>Тип коробки:
+      <input type="radio" name="type" value="standard" checked> Стандартная
+      <input type="radio" name="type" value="archive"> Архивная
+      <input type="radio" name="type" value="move"> Для переезда
+    </label><br>
+    <label>Кол-во: <input type="number" name="qty" value="1" min="1"></label><br>
+    <label>Опции:
+      <input type="checkbox" name="option_handles" value="yes"> Ручки
+      <input type="checkbox" name="option_logo" value="yes"> Логотип
+    </label><br>
+    <label>Пароль для проверки <input type="password" name="password"></label><br>
+    <input type="hidden" name="promo" value="super2025">
+    <button type="submit">Заказать</button>
+  </form>
+ 
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Характеристики коробок</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    table.bgimg {
+      background-image: url('bg_table.jpg');
+      background-size: cover;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    table.bgimg td, table.bgimg th { border: 1px solid #666; padding: 10px; }
+    td.imgcell { background-image: url('cell_bg.jpg'); background-size: cover; }
+  </style>
+</head>
+<body>
+
+   <nav>
+    <ul>
+      <li><a href="index.html"  class="nav-link">Главная</a></li>
+      <li><a href="about.html"  class="nav-link">О заводе</a></li>
+      <li><a href="products.html"  class="nav-link">Продукция</a></li>
+      <li><a href="technologies.html"  class="nav-link">Технологии</a></li>
+      <li><a href="specs.html"  class="nav-link">Характеристики</a></li>
+      <li><a href="forms.html"  class="nav-link">Контакты</a></li>
+      <li>
+        <a href="#">DOM и JS</a>
+        <ul>
+          <li><a href="dom_read.html"  class="nav-link">Считываем DOM</a></li>
+          <li><a href="dom_translate.html"  class="nav-link">Кириллица → Латиница</a></li>
+          <li><a href="algorithm.html"  class="nav-link">Алгоритмическая задача</a></li>
+        </ul>
+      </li>
+      <li><a href="https://yandex.ru" target="_blank" rel="noopener">Наш поставщик</a></li>
+    </ul>
+  </nav>
+
+  <h1>Таблица характеристик</h1>
+  <table class="bgimg">
+    <tr>
+      <th>Тип</th>
+      <th>Размер (мм)</th>
+      <th>Изображение</th>
+      <th>Опции</th>
+      <th>Ссылка</th>
+    </tr>
+    <tr>
+      <td>Архивная</td>
+      <td>500×350×250</td>
+      <td class="imgcell"><img src="box1.jpg" width="80"></td>
+      <td><ul><li>Ручки</li><li>Этикетка</li></ul></td>
+      <td><a href="#order">Заказать</a></td>
+    </tr>
+    <tr>
+      <td>Переездная</td>
+      <td>600×400×400</td>
+      <td><img src="box2.jpg" width="80"></td>
+      <td>Без ручек</td>
+      <td><a href="#order">Заказать</a></td>
+    </tr>
+  </table>
+  <script src="script.js"></script>
+
+</body>
+</html>

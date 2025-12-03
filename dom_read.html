@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM_JS. Считываем информацию из DOM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <nav>
+    <ul>
+      <li><a href="index.html"  class="nav-link">Главная</a></li>
+      <li><a href="about.html"  class="nav-link">О заводе</a></li>
+      <li><a href="products.html"  class="nav-link">Продукция</a></li>
+      <li><a href="technologies.html"  class="nav-link">Технологии</a></li>
+      <li><a href="specs.html"  class="nav-link">Характеристики</a></li>
+      <li><a href="forms.html"  class="nav-link">Контакты</a></li>
+      <li>
+        <a href="#">DOM и JS</a>
+        <ul>
+          <li><a href="dom_read.html"  class="nav-link">Считываем DOM</a></li>
+          <li><a href="dom_translate.html"  class="nav-link">Кириллица → Латиница</a></li>
+          <li><a href="algorithm.html"  class="nav-link">Алгоритмическая задача</a></li>
+        </ul>
+      </li>
+      <li><a href="https://yandex.ru" target="_blank" rel="noopener">Наш поставщик</a></li>
+    </ul>
+  </nav>
+
+  <h1>DOM_JS. Считываем информацию из DOM</h1>
+  <h2>Вторая страница паспорта:</h2>
+  <p><b>Фамилия:</b> Тухватшина</p>
+  <p><b>Имя:</b> Эльвина</p>
+  <p><b>Год рождения:</b> 2005</p>
+  <p><b>Пол:</b> женский</p>
+  <p><b>Место рождения:</b> г. Туймазы</p>
+  <p><b>Дата выдачи:</b> 11.03.2025</p>
+  <h2>Третья страница паспорта:</h2>
+  <p><b>Фамилия:</b> Тухватшина</p>
+  <p><b>Имя:</b> Эльвина</p>
+  <p><b>Год рождения:</b> 2005</p>
+  <p><b>Кем выдан:</b> ОВД Люберецкого р-на г. Люберцы</p>
+  <p><b>Код подразделения:</b> 770-001</p>
+  <p><b>Адрес регистрации:</b> ул. Ленина, д. 8</p>
+
+  <h3>Считываем фамилию, имя и год рождения (пример по заданию):</h3>
+  <button onclick="showPassportData()">Считать данные из DOM</button>
+  <p id="result"></p>
+
+  <script>
+    function showPassportData() {
+      // Получаем фамилию, имя, год рождения с третьего <p> (всего выше 4 <p>)
+      const ps = document.getElementsByTagName('p');
+      // Пример: вывести второй, третий, четвертый абзац
+      const surname = ps[0].childNodes[1].textContent.trim();
+      const name = ps[1].childNodes[1].textContent.trim();
+      const year = ps[2].childNodes[1].textContent.trim();
+      document.getElementById('result').textContent =
+        'Фамилия: ' + surname + ', Имя: ' + name + ', Год рождения: ' + year;
+    }
+  </script>
+
+  <h3>Пример скриншота результата</h3>
+  <img src="dom_read_example.png" alt="Скриншот" width="320">
+  
+<script src="script.js"></script>
+
+</body>
+</html>
