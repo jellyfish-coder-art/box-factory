@@ -225,6 +225,76 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
+
+    // Скрипт для выделения активной внутренней ссылки при прокрутке
+    document.addEventListener('DOMContentLoaded', function() {
+      // Функция для определения, какой раздел сейчас виден
+      function highlightInternalNav() {
+        const sections = document.querySelectorAll('h2[id], h3[id]');
+        const navLinks = document.querySelectorAll('.internal-nav a');
+        
+        let currentSection = '';
+        const windowHeight = window.innerHeight;
+        const scrollPosition = window.scrollY + 100; // Небольшой отступ
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSection = section.id;
+          }
+        });
+        
+        navLinks.forEach(link => {
+          link.classList.remove('active-internal');
+          if (link.getAttribute('href') === '#' + currentSection) {
+            link.classList.add('active-internal');
+          }
+        });
+      }
+      
+      // Вызываем при загрузке и прокрутке
+      window.addEventListener('scroll', highlightInternalNav);
+      highlightInternalNav();
+      
+      // Скрипт для показа деталей новостей
+      document.querySelectorAll('.read-more').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            // Скрываем все детали
+            document.querySelectorAll('[id^="news-detail"]').forEach(detail => {
+              detail.style.display = 'none';
+            });
+            
+            // Показываем выбранную деталь
+            targetElement.style.display = 'block';
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+      
+      // Плавная прокрутка для внутренних ссылок
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
   
   // Инициализация всех функций
   highlightActivePage();
@@ -242,3 +312,4 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('Script.js загружен и инициализирован');
   console.log('Текущая страница:', window.location.pathname);
 });
+
