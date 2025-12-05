@@ -4,212 +4,104 @@
   <meta charset="UTF-8">
   <title>Завод картонных коробок</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Добавляем иконку для сайта -->
-  <link rel="icon" href="images/logo.png" type="image/png">
-  <!-- Добавляем meta-тег для адаптивности -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Добавляем стили для выделения активной страницы */
-    .nav-link.active {
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 4px;
-      padding: 5px 10px;
-    }
-    
-    /* Стили для внутренней навигации */
-    .internal-nav {
-      background-color: #f5f5f5;
-      padding: 10px;
-      border-radius: 5px;
-      margin: 20px 0;
-    }
-    
-    .internal-nav a {
-      margin-right: 15px;
-      color: #333;
-      text-decoration: none;
-    }
-    
-    .internal-nav a:hover {
-      color: #4CAF50;
-    }
-    
-    .internal-nav a.active-internal {
-      color: #4CAF50;
-      font-weight: bold;
-      border-bottom: 2px solid #4CAF50;
-      padding-bottom: 2px;
-    }
-    
-    /* Стили для новостей */
-    .news-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      margin: 30px 0;
-    }
-    
-    .news-item {
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 20px;
-      transition: transform 0.3s ease;
-    }
-    
-    .news-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
-    .news-date {
-      color: #666;
-      font-size: 0.9em;
-      margin-bottom: 10px;
-    }
-    
-    .news-title {
-      color: #333;
-      margin-bottom: 10px;
-    }
-    
-    /* Изменяем размер логотипа */
-    .logo-img {
-      width: 120px; /* Устанавливаем ширину логотипа */
-      height: auto; /* Сохраняем пропорции */
-      transition: transform 0.3s ease;
-    }
-    
-    .logo-img:hover {
-      transform: scale(1.05);
-    }
-  </style>
+
 </head>
 <body>
-  <!-- Добавляем якорь для кнопки "К началу" -->
-  <a id="top" name="top"></a>
+<nav>
+  <!-- Графическая ссылка с измененным размером логотипа -->
+  <a href="index.html" class="logo-link">
+    <img src="images/logo.png" alt="Логотип завода картонных коробок" class="logo-img">
+  </a>
+  
+  <ul>
+    <!-- Главная страница выделена классом nav-active -->
+    <li><a href="index.html" class="nav-link nav-active">Главная</a></li>
+    <li><a href="about.html" class="nav-link">О заводе</a></li>
+    <li><a href="products.html" class="nav-link">Продукция</a></li>
+    <li><a href="technologies.html" class="nav-link">Технологии</a></li>
+    <li><a href="specs.html" class="nav-link">Характеристики</a></li>
+    <li><a href="forms.html" class="nav-link">Контакты</a></li>
+    <li>
+      <a href="#" class="dropdown">DOM и JS</a>
+      <ul>
+        <li><a href="dom_read.html" class="nav-link">Считываем DOM</a></li>
+        <li><a href="dom_translate.html" class="nav-link">Кириллица → Латиница</a></li>
+        <li><a href="algorithm.html" class="nav-link">Алгоритмическая задача</a></li>
+      </ul>
+    </li>
+    <li><a href="https://yandex.ru" target="_blank" rel="noopener">Наш поставщик</a></li>
+  </ul>
+</nav>
 
-  <nav>
-    <!-- Добавить графическую ссылку -->
-    <a href="index.html" class="logo-link">
-      <!-- Изменяем размер логотипа через атрибуты width/height и CSS -->
-      <img src="images/logo.png" alt="Логотип завода картонных коробок" class="logo-img" width="120" height="60">
-    </a>
-    
-    <ul>
-      <!-- Добавляем класс active для текущей страницы -->
-      <li><a href="index.html" class="nav-link active">Главная</a></li>
-      <li><a href="about.html" class="nav-link">О заводе</a></li>
-      <li><a href="products.html" class="nav-link">Продукция</a></li>
-      <li><a href="technologies.html" class="nav-link">Технологии</a></li>
-      <li><a href="specs.html" class="nav-link">Характеристики</a></li>
-      <li><a href="forms.html" class="nav-link">Контакты</a></li>
-      <li>
-        <a href="#" class="dropdown">DOM и JS</a>
-        <ul>
-          <li><a href="dom_read.html" class="nav-link">Считываем DOM</a></li>
-          <li><a href="dom_translate.html" class="nav-link">Кириллица → Латиница</a></li>
-          <li><a href="algorithm.html" class="nav-link">Алгоритмическая задача</a></li>
-        </ul>
-      </li>
-      <li><a href="https://yandex.ru" target="_blank" rel="noopener noreferrer">Наш поставщик</a></li>
-    </ul>
-  </nav>
-
-  <div class="container">
-    <h1>Завод картонных коробок</h1>
-    <p>Производство и продажа надёжных коробок по индивидуальным заказам.</p>
-    
-    <!-- Внутренняя навигация с выделением активного раздела -->
-    <div class="internal-nav">
-      <a href="#advantages" class="active-internal">Наши преимущества</a>
-      <a href="#news">Новости</a>
-      <a href="#about">О компании</a>
-      <a href="#contacts">Контакты</a>
-    </div>
-
-    <h2 id="advantages">Наши преимущества</h2>
-    <ul>
-      <li><strong>Быстрая доставка</strong> - от 1 дня по Москве и области</li>
-      <li><strong>Собственное современное производство</strong> - площадь 5000 м²</li>
-      <li><strong>Возможна печать логотипа заказчика</strong> - полноцветная печать</li>
-      <li><strong>Экологичные материалы</strong> - сертифицированный картон</li>
-      <li><strong>Индивидуальный дизайн</strong> - разработка макета бесплатно</li>
-      <li><strong>Гибкие условия оплаты</strong> - работаем с НДС и без НДС</li>
-    </ul>
-
-    <h2 id="about">О компании</h2>
-    <p>Мы работаем на рынке упаковки с 2010 года и специализируемся на производстве картонных коробок различных типов и размеров. Наша миссия - предоставлять качественную упаковку, которая защищает товары и презентует бренд.</p>
-
-    <!-- Внутренняя закладка для новостей -->
-    <h2 id="news">Последние новости</h2>
-    
-    <div class="news-grid">
-      <div class="news-item">
-        <div class="news-date">15 марта 2024</div>
-        <h3 class="news-title">Автоматизация производственной линии</h3>
-        <p>В декабре завод завершил автоматизацию линии. Производительность увеличилась на 40%.</p>
-        <a href="#news-detail1" class="read-more">Подробнее</a>
-      </div>
-      
-      <div class="news-item">
-        <div class="news-date">10 марта 2024</div>
-        <h3 class="news-title">Новые стандарты качества</h3>
-        <p>Введены новые стандарты качества ISO 9001:2015. Все изделия проходят тройной контроль.</p>
-        <a href="#news-detail2" class="read-more">Подробнее</a>
-      </div>
-      
-      <div class="news-item">
-        <div class="news-date">5 марта 2024</div>
-        <h3 class="news-title">Расширение ассортимента</h3>
-        <p>Добавлены новые виды упаковки: подарочные коробки с магнитными клапанами.</p>
-        <a href="#news-detail3" class="read-more">Подробнее</a>
-      </div>
-      
-      <div class="news-item">
-        <div class="news-date">1 марта 2024</div>
-        <h3 class="news-title">Экологическая инициатива</h3>
-        <p>Запущен проект по переработке отходов. 95% производственных отходов идет на повторную переработку.</p>
-        <a href="#news-detail4" class="read-more">Подробнее</a>
-      </div>
-      
-      <div class="news-item">
-        <div class="news-date">25 февраля 2024</div>
-        <h3 class="news-title">Новый крупный заказчик</h3>
-        <p>Заключен контракт с крупной сетью супермаркетов на поставку 100 000 коробок ежемесячно.</p>
-        <a href="#news-detail5" class="read-more">Подробнее</a>
-      </div>
-      
-      <div class="news-item">
-        <div class="news-date">20 февраля 2024</div>
-        <h3 class="news-title">Обновление парка оборудования</h3>
-        <p>Приобретены новые прессы для гофрокартона немецкого производства.</p>
-        <a href="#news-detail6" class="read-more">Подробнее</a>
-      </div>
-    </div>
-
-    <!-- Подробности новостей (скрытые до клика) -->
-    <div id="news-detail1" style="display: none; padding: 20px; background: #f0f0f0; margin: 10px 0; border-radius: 5px;">
-      <h4>Детали автоматизации</h4>
-      <p>Была установлена система автоматической резки и склейки, что позволило сократить время производства на 30%.</p>
-    </div>
-
-    <div id="news-detail2" style="display: none; padding: 20px; background: #f0f0f0; margin: 10px 0; border-radius: 5px;">
-      <h4>Стандарты качества</h4>
-      <p>Сертификация ISO 9001:2015 позволяет нам выходить на международные рынки и работать с иностранными клиентами.</p>
-    </div>
-
-    <h2 id="contacts">Контактная информация</h2>
-    <p>Адрес: Москва, ул. Промышленная, 15<br>
-    Телефон: +7 (495) 123-45-67<br>
-    Email: info@boxfactory.ru</p>
-
-    <!-- Кнопка для возврата к началу -->
-    <p style="text-align: center; margin-top: 40px;">
-      <a href="#top" class="back-to-top">↑ К началу страницы</a>
-    </p>
+  <h1 id="top">Завод картонных коробок</h1>
+  <p>Производство и продажа надёжных коробок по индивидуальным заказам.</p>
+  <ul>
+    <li>Быстрая доставка</li>
+    <li>Собственное современное производство</li>
+    <li>Возможна печать логотипа заказчика</li>
+  </ul>
+  
+  <!-- Внутренняя навигация -->
+  <div class="internal-nav">
+    <strong>Быстрая навигация по странице:</strong><br>
+    <a href="#top" class="internal-active">К началу</a>
+    <a href="#news">Новости завода</a>
+    <a href="#products">Наши продукты</a>
+    <a href="#advantages">Преимущества</a>
+    <a href="#contact-preview">Связаться с нами</a>
   </div>
+
+  <!-- Новость 1 -->
+  <h2 id="news">Последние новости</h2>
+  <h3>Автоматизация производственной линии</h3>
+  <p><strong>Дата:</strong> 15 марта 2024</p>
+  <p>В декабре завод завершил автоматизацию основной производственной линии. Новое оборудование позволило увеличить производительность на 40% и снизить процент брака до 0,5%.</p>
+  
+  <!-- Новость 2 -->
+  <h3>Новые стандарты качества</h3>
+  <p><strong>Дата:</strong> 10 марта 2024</p>
+  <p>Введены новые стандарты контроля качества продукции. Теперь каждая партия коробок проходит двойную проверку: автоматическую и ручную выборочную.</p>
+  
+  <!-- Новость 3 -->
+  <h3>Расширение ассортимента</h3>
+  <p><strong>Дата:</strong> 5 марта 2024</p>
+  <p>Завод начал производство экологичных биоразлагаемых коробок из переработанного картона. Новый продукт уже доступен для заказа.</p>
+  
+  <!-- Новость 4 -->
+  <h3>Партнерство с логистической компанией</h3>
+  <p><strong>Дата:</strong> 1 марта 2024</p>
+  <p>Заключено соглашение с крупной логистической компанией, что позволит сократить сроки доставки по России на 15-20%.</p>
+  
+  <p><a href="#top">К началу</a></p>
+
+  <!-- Новый раздел - Наши продукты (превью) -->
+  <h2 id="products">Наши основные продукты</h2>
+  <ul>
+    <li>Картонные коробки стандартных размеров</li>
+    <li>Индивидуальная упаковка под заказ</li>
+    <li>Промоупаковка с полноцветной печатью</li>
+    <li>Экологичная биоразлагаемая упаковка</li>
+    <li>Промышленная тара больших объемов</li>
+  </ul>
+  <p><a href="products.html">Подробнее о продукции →</a></p>
+  <p><a href="#top">К началу</a></p>
+
+  <!-- Новый раздел - Преимущества -->
+  <h2 id="advantages">Почему выбирают нас</h2>
+  <ol>
+    <li>20 лет опыта на рынке</li>
+    <li>Собственное производство полного цикла</li>
+    <li>Современное немецкое оборудование</li>
+    <li>Гибкая система скидок для оптовиков</li>
+    <li>Бесплатные образцы продукции</li>
+  </ol>
+  <p><a href="#top">К началу</a></p>
+
+  <!-- Новый раздел - Контакты (превью) -->
+  <h2 id="contact-preview">Связаться с нами</h2>
+  <p>Заинтересованы в сотрудничестве? Оставьте заявку, и наш менеджер свяжется с вами в течение часа.</p>
+  <p><a href="forms.html">Перейти к форме заказа →</a></p>
+  <p><a href="#top">К началу</a></p>
 
   <script src="script.js"></script>
 </body>
