@@ -532,6 +532,50 @@ li {
     padding: 15px;
   }
 }
+    /* Стили для выделения активной страницы в навигации */
+    .nav-active {
+      background-color: #2c3e50;
+      color: white;
+      border-radius: 4px;
+      padding: 5px 10px;
+    }
+    
+    /* Уменьшаем размер логотипа */
+    .logo-img {
+      width: 80px; /* Было, наверное, больше. Можно регулировать */
+      height: auto;
+      transition: all 0.3s ease;
+    }
+    
+    .logo-img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Стили для внутренней навигации */
+    .internal-nav {
+      margin: 20px 0;
+      padding: 10px;
+      background-color: #f8f9fa;
+      border-left: 4px solid #3498db;
+    }
+    
+    .internal-nav a {
+      color: #2c3e50;
+      text-decoration: none;
+      margin-right: 15px;
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+    
+    .internal-nav a:hover {
+      background-color: #e9ecef;
+    }
+    
+    .internal-nav a.internal-active {
+      background-color: #3498db;
+      color: white;
+      font-weight: bold;
+    }
 
 @media (max-width: 480px) {
   h1 { font-size: 1.5em; }
@@ -549,6 +593,7 @@ li {
 nav ul li ul li { display: block; margin: 0; }
 nav ul li ul li a { color: #fff; white-space: nowrap; display: block; padding: 6px 12px; }
 nav a.active, nav a:focus, nav a:hover { background: #a8c3e1; color: #222; text-decoration: underline; border-radius: 4px; }
+
 
 
 
