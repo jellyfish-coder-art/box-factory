@@ -46,7 +46,7 @@ nav a {
 }
 
 .logo-img {
-  height: 40px;
+  height: 15px;
   width: auto;
   vertical-align: middle;
   border-radius: 3px;
@@ -593,6 +593,7 @@ li {
 nav ul li ul li { display: block; margin: 0; }
 nav ul li ul li a { color: #fff; white-space: nowrap; display: block; padding: 6px 12px; }
 nav a.active, nav a:focus, nav a:hover { background: #a8c3e1; color: #222; text-decoration: underline; border-radius: 4px; }
+
 
 
 
