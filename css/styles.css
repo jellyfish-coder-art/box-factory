@@ -541,11 +541,6 @@ li {
     }
     
     /* Уменьшаем размер логотипа */
-    .logo-img {
-      width: 15px; /* Было, наверное, больше. Можно регулировать */
-      height: auto;
-      transition: all 0.3s ease;
-    }
     
     .logo-img:hover {
       transform: scale(1.05);
@@ -582,10 +577,6 @@ li {
   h2 { font-size: 1.3em; }
   h3 { font-size: 1.1em; }
   
-  .logo-img {
-    height: 30px;
-  }
-  
   .thumbnail {
     width: 70px;
   }
@@ -593,6 +584,7 @@ li {
 nav ul li ul li { display: block; margin: 0; }
 nav ul li ul li a { color: #fff; white-space: nowrap; display: block; padding: 6px 12px; }
 nav a.active, nav a:focus, nav a:hover { background: #a8c3e1; color: #222; text-decoration: underline; border-radius: 4px; }
+
 
 
 
