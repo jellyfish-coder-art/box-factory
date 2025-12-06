@@ -53,7 +53,6 @@
     <a href="#types">Раздел 1: Типы коробок</a> | 
     <a href="#materials">Раздел 2: Материалы</a> | 
     <a href="#specs-table">Раздел 3: Сравнительная таблица</a> |
-    <a href="#gallery">Раздел 4: Галерея</a> |
     <a href="#top">К началу страницы</a>
   </div>
 
@@ -121,106 +120,99 @@
   <h2 id="specs-table">Раздел 3: Сравнительная таблица характеристик</h2>
   
   <!-- ИЗМЕНЕНО: класс bgimg заменен на table-bg-image -->
-  <table class="table-bg-image">
+ <!-- Раздел 3: Таблица (основная таблица сайта) -->
+<h2 id="specs-table">Раздел 3: Сравнительная таблица характеристик</h2>
+
+<!-- Таблица с видимыми границами -->
+<table border="1" cellspacing="0" cellpadding="10" style="border-collapse: collapse; width: 100%;">
+  <!-- Заголовок таблицы -->
+  <caption><strong>Сравнение типов картонных коробок</strong></caption>
+  
+  <!-- Шапка таблицы -->
+  <thead style="background-color: #f2f2f2;">
     <tr>
-      <th>Тип коробки</th>
-      <th>Размеры (Д×Ш×В, мм)</th>
-      <th>Материал</th>
-      <th>Изображение</th>
-      <th>Макс. нагрузка</th>
-      <th>Особенности</th>
-      <th>Ссылка</th>
+      <th style="border: 1px solid #333; padding: 12px;">Тип коробки</th>
+      <th style="border: 1px solid #333; padding: 12px;">Размеры (Д×Ш×В, мм)</th>
+      <th style="border: 1px solid #333; padding: 12px;">Материал</th>
+      <th style="border: 1px solid #333; padding: 12px;">Изображение</th>
+      <th style="border: 1px solid #333; padding: 12px;">Макс. нагрузка</th>
+      <th style="border: 1px solid #333; padding: 12px;">Особенности</th>
+      <th style="border: 1px solid #333; padding: 12px;">Ссылка</th>
     </tr>
+  </thead>
+  
+  <!-- Тело таблицы -->
+  <tbody>
+    <!-- Первая строка -->
     <tr>
-      <td><strong>Архивная стандарт</strong></td>
-      <td>500×350×250</td>
-      <td>3-слойный, Т-24</td>
-      <!-- ИЗМЕНЕНО: класс imgcell заменен на cell-bg-image -->
-      <td class="cell-bg-image">
-        <img src="images/archive_box.jpg" width="80" alt="Архивная коробка">
+      <td style="border: 1px solid #333; padding: 10px;"><strong>Архивная стандарт</strong></td>
+      <td style="border: 1px solid #333; padding: 10px;">500×350×250</td>
+      <td style="border: 1px solid #333; padding: 10px;">3-слойный, Т-24</td>
+      <td style="border: 1px solid #333; padding: 10px; text-align: center;">
+        <img src="images/archive_box.jpg" width="80" alt="Архивная коробка" style="border: 1px solid #ccc; padding: 2px;">
       </td>
-      <td>25 кг</td>
-      <td>
-        <ul>
+      <td style="border: 1px solid #333; padding: 10px; text-align: center;">25 кг</td>
+      <td style="border: 1px solid #333; padding: 10px;">
+        <ul style="margin: 0; padding-left: 20px;">
           <li>Пластиковые ручки</li>
           <li>Прозрачное окно для этикетки</li>
           <li>Крышка-клапан</li>
         </ul>
       </td>
-      <td><a href="forms.html#order" target="_blank">Заказать</a></td>
-    </tr>
-    <tr>
-      <td><strong>Переездная усиленная</strong></td>
-      <td>600×400×400</td>
-      <td>5-слойный, П-32</td>
-      <td class="cell-bg-image">
-        <img src="images/moving_box.jpg" width="80" alt="Коробка для переезда">
+      <td style="border: 1px solid #333; padding: 10px; text-align: center;">
+        <a href="forms.html#order" target="_blank" style="color: #0066cc; text-decoration: none;">
+          <strong>Заказать</strong>
+        </a>
       </td>
-      <td>50 кг</td>
-      <td>
-        <ul>
+    </tr>
+    
+    <!-- Вторая строка -->
+    <tr>
+      <td style="border: 1px solid #333; padding: 10px;"><strong>Переездная усиленная</strong></td>
+      <td style="border: 1px solid #333; padding: 10px;">600×400×400</td>
+      <td style="border: 1px solid #333; padding: 10px;">5-слойный, П-32</td>
+      <td style="border: 1px solid #333; padding: 10px; text-align: center;">
+        <img src="images/moving_box.jpg" width="80" alt="Коробка для переезда" style="border: 1px solid #ccc; padding: 2px;">
+      </td>
+      <td style="border: 1px solid #333; padding: 10px; text-align: center;">50 кг</td>
+      <td style="border: 1px solid #333; padding: 10px;">
+        <ul style="margin: 0; padding-left: 20px;">
           <li>Усиленные углы</li>
           <li>Влагостойкая пропитка</li>
           <li>Маркировочные наклейки в комплекте</li>
         </ul>
       </td>
-      <td><a href="forms.html#order" target="_blank">Заказать</a></td>
-    </tr>
-    <tr>
-      <td><strong>Транспортная средняя</strong></td>
-      <td>400×300×300</td>
-      <td>3-слойный, Т-23</td>
-      <td class="cell-bg-image">
-        <img src="images/transport_box.jpg" width="80" alt="Транспортная коробка">
+      <td style="border: 1px solid #333; padding: 10px; text-align: center;">
+        <a href="forms.html#order" target="_blank" style="color: #0066cc; text-decoration: none;">
+          <strong>Заказать</strong>
+        </a>
       </td>
-      <td>20 кг</td>
-      <td>
-        <ul>
+    </tr>
+    
+    <!-- Третья строка -->
+    <tr>
+      <td style="border: 1px solid #333; padding: 10px;"><strong>Транспортная средняя</strong></td>
+      <td style="border: 1px solid #333; padding: 10px;">400×300×300</td>
+      <td style="border: 1px solid #333; padding: 10px;">3-слойный, Т-23</td>
+      <td style="border: 1px solid #333; padding: 10px; text-align: center;">
+        <img src="images/transport_box.jpg" width="80" alt="Транспортная коробка" style="border: 1px solid #ccc; padding: 2px;">
+      </td>
+      <td style="border: 1px solid #333; padding: 10px; text-align: center;">20 кг</td>
+      <td style="border: 1px solid #333; padding: 10px;">
+        <ul style="margin: 0; padding-left: 20px;">
           <li>Стандартные клапаны</li>
           <li>Возможность печати логотипа</li>
           <li>Штабелируемая</li>
         </ul>
       </td>
-      <td>
-        <a href="details/transport_box.html">Подробнее</a><br>
-        <a href="forms.html#order">Заказать</a>
+      <td style="border: 1px solid #333; padding: 10px; text-align: center;">
+        <a href="details/transport_box.html" style="color: #0066cc; text-decoration: none;">Подробнее</a><br>
+        <a href="forms.html#order" style="color: #0066cc; text-decoration: none;">Заказать</a>
       </td>
     </tr>
-  </table>
-
-  <!-- Раздел 4: Галерея с изображениями и пояснениями -->
-  <h2 id="gallery">Раздел 4: Галерея продукции</h2>
+  </tbody>
+</table>
   
-  <!-- Классы box-gallery и box-card нужно добавить в CSS или удалить -->
-  <div class="box-gallery">
-    <div class="box-card">
-      <h4>Коробка архивная с этикеткой</h4>
-      <figure>
-        <img src="images/archive_detail.jpg" alt="Архивная коробка" width="200">
-        <figcaption>Архивная коробка с прозрачным окном для маркировки</figcaption>
-      </figure>
-      <p><strong>Характеристики:</strong></p>
-      <ul>
-        <li>Вместимость: 40 л</li>
-        <li>Вес коробки: 800 г</li>
-        <li>Цвет: коричневый/белый</li>
-      </ul>
-    </div>
-    
-    <div class="box-card">
-      <h4>Усиленная коробка для переезда</h4>
-      <figure>
-        <img src="images/moving_detail.jpg" alt="Коробка для переезда" width="200">
-        <figcaption>Усиленная конструкция для тяжелых грузов</figcaption>
-      </figure>
-      <p><strong>Характеристики:</strong></p>
-      <ul>
-        <li>Вместимость: 90 л</li>
-        <li>Вес коробки: 1200 г</li>
-        <li>Усиление: углы и дно</li>
-      </ul>
-    </div>
-  </div>
 
   <!-- Еще одно большое изображение через миниатюру -->
   <h3>Тестирование прочности на разрыв:</h3>
@@ -244,5 +236,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
