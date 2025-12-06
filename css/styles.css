@@ -542,7 +542,7 @@ li {
     
     /* Уменьшаем размер логотипа */
     .logo-img {
-      width: 30px; /* Было, наверное, больше. Можно регулировать */
+      width: 15px; /* Было, наверное, больше. Можно регулировать */
       height: auto;
       transition: all 0.3s ease;
     }
@@ -593,6 +593,7 @@ li {
 nav ul li ul li { display: block; margin: 0; }
 nav ul li ul li a { color: #fff; white-space: nowrap; display: block; padding: 6px 12px; }
 nav a.active, nav a:focus, nav a:hover { background: #a8c3e1; color: #222; text-decoration: underline; border-radius: 4px; }
+
 
 
 
