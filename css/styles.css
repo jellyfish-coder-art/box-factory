@@ -57,7 +57,7 @@ nav a {
   text-decoration: underline;
   background: #a8c3e1;
   color: #222;
-  padding: 5px 10px;
+  padding: 2px 6px;
   border-radius: 4px;
 }
 
@@ -72,7 +72,7 @@ nav ul li ul {
   position: absolute;
   left: 0;
   top: 100%;
-  min-width: 180px;
+  min-width: 150px;
   background: #4080b0;
   border-radius: 0 0 6px 6px;
   padding: 0;
@@ -93,19 +93,20 @@ nav ul li ul li a {
   color: #fff; 
   white-space: nowrap; 
   display: block; 
-  padding: 8px 15px; 
+  padding: 6px 12px; 
   border-bottom: 1px solid #5a8bc5;
 }
 
 nav ul li ul li:last-child a {
   border-bottom: none;
 }
-
+nav a.active, 
 nav a:hover, 
 nav a:focus { 
   background: #a8c3e1; 
   color: #222; 
-  text-decoration: underline; 
+  text-decoration: underline;
+  border-radius: 4px;
 }
 
 /* Заголовки */
@@ -584,6 +585,7 @@ li {
 nav ul li ul li { display: block; margin: 0; }
 nav ul li ul li a { color: #fff; white-space: nowrap; display: block; padding: 6px 12px; }
 nav a.active, nav a:focus, nav a:hover { background: #a8c3e1; color: #222; text-decoration: underline; border-radius: 4px; }
+
 
 
 
