@@ -573,6 +573,147 @@ li {
       font-weight: bold;
     }
 
+/* Основные стили для таблицы с фоном-изображением */
+.table-bg-image {
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: local;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 700px;
+  margin: 20px auto;
+  border: 2px solid #4772a3;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Убираем старые inline-стили */
+.table-bg-image td,
+.table-bg-image th {
+  border: 1px solid rgba(71, 114, 163, 0.3);
+}
+
+/* Стили для заголовка таблицы */
+.table-bg-image .table-header {
+  background-color: rgba(71, 114, 163, 0.9);
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  vertical-align: middle;
+  height: 50px;
+  padding: 10px;
+}
+
+/* Стили для левой ячейки */
+.table-bg-image .table-cell-left {
+  background-color: rgba(255, 255, 255, 0.85);
+  vertical-align: top;
+  padding: 15px;
+  width: 200px;
+  backdrop-filter: blur(3px);
+}
+
+/* Стили для правой ячейки */
+.table-bg-image .table-cell-right {
+  background-color: rgba(255, 255, 255, 0.85);
+  vertical-align: top;
+  padding: 15px;
+  width: 250px;
+  backdrop-filter: blur(3px);
+}
+
+/* Стили для ячейки с изображением */
+.table-bg-image .table-cell-image {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  text-align: center;
+  backdrop-filter: blur(2px);
+  border: 2px solid rgba(255, 105, 180, 0.3);
+}
+
+/* Стили для ячейки с фоновым изображением (rowspan) */
+.table-bg-image .cell-bg-image {
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-width: 150px;
+  border-left: 2px solid rgba(71, 114, 163, 0.5);
+}
+
+/* Стили для футера таблицы */
+.table-bg-image .table-footer {
+  background-color: rgba(240, 248, 255, 0.9);
+  text-align: right;
+  padding: 15px;
+  vertical-align: top;
+  backdrop-filter: blur(2px);
+  border-top: 2px solid rgba(71, 114, 163, 0.3);
+}
+
+/* Стили для ссылок в таблице */
+.table-bg-image a {
+  color: #255080;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.table-bg-image a:hover {
+  color: #4772a3;
+  text-decoration: underline;
+}
+
+/* Стили для изображений внутри таблицы */
+.table-bg-image img {
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Эффект при наведении на строки */
+.table-bg-image tr:hover td {
+  background-color: rgba(255, 255, 255, 0.95);
+  transition: background-color 0.3s;
+}
+
+/* Улучшенная читаемость текста */
+.table-bg-image strong {
+  color: #2c3e50;
+}
+
+.table-bg-image p {
+  color: #34495e;
+  line-height: 1.5;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .table-bg-image {
+    width: 95% !important;
+    max-width: 95% !important;
+    margin: 10px auto;
+    font-size: 14px;
+  }
+  
+  .table-bg-image .table-cell-left,
+  .table-bg-image .table-cell-right {
+    width: auto;
+  }
+  
+  .table-bg-image .cell-bg-image {
+    display: none; /* Скрываем боковую ячейку на мобильных */
+  }
+  
+  .table-bg-image .table-footer {
+    text-align: center;
+  }
+}
+
+
 @media (max-width: 480px) {
   h1 { font-size: 1.5em; }
   h2 { font-size: 1.3em; }
@@ -585,6 +726,7 @@ li {
 nav ul li ul li { display: block; margin: 0; }
 nav ul li ul li a { color: #fff; white-space: nowrap; display: block; padding: 6px 12px; }
 nav a.active, nav a:focus, nav a:hover { background: #a8c3e1; color: #222; text-decoration: underline; border-radius: 4px; }
+
 
 
 
