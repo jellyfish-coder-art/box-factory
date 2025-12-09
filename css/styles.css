@@ -165,7 +165,7 @@ th, td {
 }
 
 th {
-  background: #4772a3;
+  background-image: url('images/background.jpg');
   color: white;
   font-weight: bold;
 }
@@ -191,7 +191,7 @@ th {
 /* Дополнительные классы для таблицы */
 .table-header {
   text-align: center;
-  background-color: #e8f4f8;
+  background-image: url('images/background.jpg');
   height: 50px;
   vertical-align: middle;
   font-size: 1.1em;
@@ -229,7 +229,7 @@ th {
 
 /* Ячейка с фоновым изображением */
 .cell-bg-image {
-  background-image: url('images/cell-bg.jpg');
+  background-image: url('images/background.jpg');
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -585,6 +585,7 @@ li {
 nav ul li ul li { display: block; margin: 0; }
 nav ul li ul li a { color: #fff; white-space: nowrap; display: block; padding: 6px 12px; }
 nav a.active, nav a:focus, nav a:hover { background: #a8c3e1; color: #222; text-decoration: underline; border-radius: 4px; }
+
 
 
 
