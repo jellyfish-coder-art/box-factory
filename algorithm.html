@@ -45,104 +45,46 @@
 
   <div class="explanation">
     <h2>Условие задачи №1011</h2>
-    <p>Определить значение функции Z при произвольных X и Y по формуле:</p>
-    <div class="formula">Z = 1 / (X × Y)</div>
-    <p>где X и Y - произвольные числа, отличные от нуля.</p>
+    <p name="formulation">Определить значение функции Z при произвольных X и Y по формуле: Z = 1 / (X × Y)</p>
   </div>
-
-  <h2>Введите данные для расчета</h2>
-  
-  <form id="calcForm">
-    <p>
-      <label for="inputX">Значение X:</label>
-      <input type="number" id="inputX" step="any" required placeholder="Введите число">
-    </p>
-    
-    <p>
-      <label for="inputY">Значение Y:</label>
-      <input type="number" id="inputY" step="any" required placeholder="Введите число">
-    </p>
-    
-    <p>
-      <button type="button" onclick="calculate()">Вычислить Z</button>
-      <button type="button" onclick="clearForm()">Очистить</button>
-    </p>
+<form action="https://www.bing.com/search?" id="UserEnter" target="_blank">
+  <ul>
+    <li>Для поисковика:<input name="q" value="search"></li>
+    <li>Формулировка задачи
+    <br><textarea cols="60" rows="4" id="task" name="formulation">Определить значение функции Z при произвольных X и Y по формуле: Z = 1 / (X × Y)</textarea></li>
+    <h2>Введите данные для расчета</h2>
+    <li>Значение x: <input id="x" name="x" type="number" value="2"></li>
+    <li>Значение y: <input id="y" name="y" type="number" value="3"></li>
+    <li>Результат решения задачи - Z: <input id="z" name="z" value="не вычислено" readonly></li>
+    <li>действие 1: <input id="calculate" type="button" value="Вычислить"></li>
+    <li>действие 2: <input id="send" type="button" value="Отправить"></li>
+  </ul>
   </form>
 
-  <h2>Результат вычислений</h2>
-  <div id="result">
-    Введите значения X и Y и нажмите "Вычислить Z"
-  </div>
-
-  <script>
-    function calculate() {
-      // Получаем значения из формы
-      const xInput = document.getElementById('inputX');
-      const yInput = document.getElementById('inputY');
-      const resultDiv = document.getElementById('result');
-      
-      const x = parseFloat(xInput.value);
-      const y = parseFloat(yInput.value);
-      
-      // Проверка на пустые значения
-      if (xInput.value === '' || yInput.value === '') {
-        resultDiv.innerHTML = '<span style="color: red;">Ошибка: Заполните оба поля!</span>';
-        return;
-      }
-      
-      // Проверка на числа
-      if (isNaN(x) || isNaN(y)) {
-        resultDiv.innerHTML = '<span style="color: red;">Ошибка: Введите числовые значения!</span>';
-        return;
-      }
-      
-      // Проверка на ноль
-      if (x === 0 || y === 0) {
-        resultDiv.innerHTML = '<span style="color: red;">Ошибка: X и Y не должны быть равны нулю!</span>';
-        return;
-      }
-      
-      // Вычисления
-      const product = x * y;
-      const z = 1 / product;
-      
-      // Форматирование результата
-      let formattedZ;
-      if (Math.abs(z) < 0.0001 || Math.abs(z) > 10000) {
-        formattedZ = z.toExponential(4);
-      } else {
-        formattedZ = z.toFixed(6);
-      }
-      
-      // Вывод результата
-      resultDiv.innerHTML = `
-        <p><strong>Дано:</strong> X = ${x}, Y = ${y}</p>
-        <p><strong>Вычисление:</strong> Z = 1 / (${x} × ${y}) = 1 / ${product}</p>
-        <p><strong>Результат:</strong> Z = <span style="color: green; font-size: 1.2em;">${formattedZ}</span></p>
-      `;
-    }
-    
-    function clearForm() {
-      document.getElementById('inputX').value = '';
-      document.getElementById('inputY').value = '';
-      document.getElementById('result').innerHTML = 'Введите значения X и Y и нажмите "Вычислить Z"';
-    }
-    
-    // Автоматический расчет при нажатии Enter
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('calcForm');
-      form.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          calculate();
+ <script>
+    // Скрипт для вычисления функции Z
+    document.getElementById('calculate').addEventListener('click', function() {
+        const x = parseFloat(document.getElementById('x').value);
+        const y = parseFloat(document.getElementById('y').value);
+        
+        if (x === 0 || y === 0) {
+            document.getElementById('z').value = 'Ошибка: деление на ноль';
+        } else {
+            const z = 1 / (x * y);
+            document.getElementById('z').value = z.toFixed(4);
         }
-      });
     });
-  </script>
+    
+    // Скрипт для отправки формы
+    document.getElementById('send').addEventListener('click', function() {
+        document.getElementById('UserEnter').submit();
+    });
+</script>
 
   <script src="js/script.js"></script>
 </body>
 </html>
+
 
 
 
