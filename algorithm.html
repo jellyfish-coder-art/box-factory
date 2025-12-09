@@ -48,6 +48,9 @@
     <p name="formulation">Определить значение функции Z при произвольных X и Y по формуле: Z = 1 / (X × Y)</p>
   </div>
 <form action="https://www.bing.com/search?" id="UserEnter" target="_blank">
+<form action="https://formspree.io/f/xanrjzlz" method="POST" id="taskForm">
+        <input type="hidden" name="_subject" value="Решение задачи с сайта">
+        <input type="hidden" name="_format" value="plain">
   <ul>
     <li>Для поисковика:<input name="q" value="search"></li>
     <li>Формулировка задачи
@@ -74,6 +77,21 @@
             document.getElementById('z').value = z.toFixed(4);
         }
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const orderForm = document.getElementById('taskForm');
+      
+      if (window.location.search.includes('success=true')) {
+        successMessage.style.display = 'block';
+        window.scrollTo(0, 0);
+      }
+      
+      if (taskForm) {
+        contactForm.addEventListener('submit', function(e) {
+          console.log('Отправка формы решения');
+        });
+      }
+    });
     
     // Скрипт для отправки формы
     document.getElementById('send').addEventListener('click', function() {
@@ -84,6 +102,7 @@
   <script src="js/script.js"></script>
 </body>
 </html>
+
 
 
 
