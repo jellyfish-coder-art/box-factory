@@ -66,42 +66,49 @@
 
  <script>
     // Скрипт для вычисления функции Z
-    document.getElementById('calculate').addEventListener('click', function() {
-        const x = parseFloat(document.getElementById('x').value);
-        const y = parseFloat(document.getElementById('y').value);
-        
-        if (x === 0 || y === 0) {
-            document.getElementById('z').value = 'Ошибка: деление на ноль';
-        } else {
-            const z = 1 / (x * y);
-            document.getElementById('z').value = z.toFixed(4);
-        }
-    });
+   function calculate() {
+    console.log("x, y");
+    let x = parseFloat(elementX.value);
+    let y = parseFloat(elementY.value);
+    console.log(x, y);
 
-    document.addEventListener('DOMContentLoaded', function() {
-      const orderForm = document.getElementById('taskForm');
-      
-      if (window.location.search.includes('success=true')) {
-        successMessage.style.display = 'block';
-        window.scrollTo(0, 0);
-      }
-      
-      if (taskForm) {
-        contactForm.addEventListener('submit', function(e) {
-          console.log('Отправка формы решения');
-        });
-      }
-    });
+    if (x === 0 || y === 0) {
+        result = "Ошибка: X и Y не должны быть равны 0";
+        check = false;
+    } else {
+        let z = 1 / (x * y);
+        result = z.toFixed(4); // округляем до 4 знаков после запятой
+        check = true;
+    }
     
-    // Скрипт для отправки формы
-    document.getElementById('send').addEventListener('click', function() {
-        document.getElementById('UserEnter').submit();
-    });
+    document.getElementById("z").value = result;
+}
+
+function send() {
+    if (check) {
+        document.getElementById("UserEnter").submit();
+    } else {
+        alert("Есть недостатки. Повторите ввод или вычисление");
+    }
+}
+
+let result;
+let check;
+
+const elementX = document.getElementById("x");
+const elementY = document.getElementById("y");
+
+const elementCalculate = document.getElementById("calculate");
+elementCalculate.addEventListener('click', calculate);
+
+const elementSend = document.getElementById("send");
+elementSend.addEventListener('click', send);
 </script>
 
   <script src="js/script.js"></script>
 </body>
 </html>
+
 
 
 
