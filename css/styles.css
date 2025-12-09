@@ -152,7 +152,7 @@ h3 {
 
 /* Таблицы */
 table {
-  background-image: url('images/background.jpg');
+  background: #f7f7f7;
   border-collapse: collapse;
   width: 100%;
   margin: 20px 0;
@@ -165,7 +165,7 @@ th, td {
 }
 
 th {
-  background-image: url('images/background.jpg');
+  background: #4772a3;
   color: white;
   font-weight: bold;
 }
@@ -191,7 +191,7 @@ th {
 /* Дополнительные классы для таблицы */
 .table-header {
   text-align: center;
-  background-image: url('images/background.jpg');
+  background-color: #e8f4f8;
   height: 50px;
   vertical-align: middle;
   font-size: 1.1em;
@@ -229,7 +229,7 @@ th {
 
 /* Ячейка с фоновым изображением */
 .cell-bg-image {
-  background-image: url('images/background.jpg');
+  background-image: url('images/cell-bg.jpg');
   background-size: cover;
   background-position: center;
   text-align: center;
@@ -268,16 +268,16 @@ th {
       cursor: pointer;
       font-size: 14px;
     }
-    
+
     .small-btn:hover {
       background: #2980b9;
     }
-    
+
     .passport-card p {
       font-size: 18px;
       margin: 10px 0;
     }
-    
+
     .cyrillic-text {
       font-weight: bold;
       color: #2c3e50;
@@ -487,16 +487,16 @@ li {
     max-width: 100%;
     padding: 10px;
   }
-  
+
   nav ul {
     flex-direction: column;
   }
-  
+
   nav li {
     margin-right: 0;
     margin-bottom: 8px;
   }
-  
+
   nav ul li ul {
     position: static;
     display: none;
@@ -504,31 +504,31 @@ li {
     margin-left: 15px;
     width: calc(100% - 30px);
   }
-  
+
   nav ul li:hover > ul {
     display: block;
   }
-  
+
   .thumbnail {
     width: 80px;
   }
-  
+
   table {
     font-size: 14px;
     display: block;
     overflow-x: auto;
   }
-  
+
   .internal-nav {
     font-size: 14px;
   }
-  
+
   .internal-nav a {
     display: inline-block;
     margin: 5px;
     padding: 8px 12px;
   }
-  
+
   .form-section {
     padding: 15px;
   }
@@ -540,13 +540,13 @@ li {
       border-radius: 4px;
       padding: 5px 10px;
     }
-    
+
     /* Уменьшаем размер логотипа */
-    
+
     .logo-img:hover {
       transform: scale(1.05);
     }
-    
+
     /* Стили для внутренней навигации */
     .internal-nav {
       margin: 20px 0;
@@ -554,7 +554,7 @@ li {
       background-color: #f8f9fa;
       border-left: 4px solid #3498db;
     }
-    
+
     .internal-nav a {
       color: #2c3e50;
       text-decoration: none;
@@ -562,11 +562,11 @@ li {
       padding: 5px 10px;
       border-radius: 3px;
     }
-    
+
     .internal-nav a:hover {
       background-color: #e9ecef;
     }
-    
+
     .internal-nav a.internal-active {
       background-color: #3498db;
       color: white;
@@ -577,7 +577,7 @@ li {
   h1 { font-size: 1.5em; }
   h2 { font-size: 1.3em; }
   h3 { font-size: 1.1em; }
-  
+
   .thumbnail {
     width: 70px;
   }
@@ -585,16 +585,6 @@ li {
 nav ul li ul li { display: block; margin: 0; }
 nav ul li ul li a { color: #fff; white-space: nowrap; display: block; padding: 6px 12px; }
 nav a.active, nav a:focus, nav a:hover { background: #a8c3e1; color: #222; text-decoration: underline; border-radius: 4px; }
-
-
-
-
-
-
-
-
-
-
 
 
 
