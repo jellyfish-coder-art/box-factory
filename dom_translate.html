@@ -10,7 +10,6 @@
     <!-- Добавить графическую ссылку -->
      <a href="index.html" class="logo-link">
     <img src="images/logo.avif" alt="Логотип завода картонных коробок" class="logo-img">
-   <h1 class="text-center mb-5" id="top">КартонПро</h1>
   </a>
     
    <style>
@@ -48,8 +47,6 @@
   
   <div class="internal-nav">
     <a href="#passport">Паспортные данные</a> | 
-    <a href="#transliteration">Таблица транслитерации</a> | 
-    <a href="#examples">Примеры перевода</a> |
     <a href="#top">К началу страницы</a>
   </div>
 
@@ -67,7 +64,6 @@
     <div style="text-align: center; margin: 30px 0;">
       <button onclick="translateToLatin()" class="form-submit">Перевести на латиницу</button>
       <button onclick="restoreCyrillic()" class="form-submit" style="background: #95a5a6;">Вернуть кириллицу</button>
-      <button onclick="translateAllToLatin()" class="form-submit" style="background: #e67e22;">Перевести всё (включая год)</button>
     </div>
     
     <div id="result" style="padding: 15px; background: #e8f4f8; border-radius: 5px; margin: 20px 0;"></div>
@@ -80,77 +76,11 @@
       <p><b>Место рождения:</b> <span id="translated-birthplace"></span></p>
     </div>
   </div>
+    
 
-  <!-- Раздел 2: Таблица транслитерации -->
-  <div id="transliteration">
-    <h2>Таблица транслитерации (ГОСТ 7.79-2000 система Б):</h2>
-    
-    <table class="table-bg-image" style="margin: 20px 0;">
-      <tr>
-        <th colspan="2">Кириллица → Латиница</th>
-      </tr>
-      <tr>
-        <td style="width: 50%;">
-          <strong>Русские буквы:</strong><br>
-          А→A, Б→B, В→V, Г→G, Д→D, Е→E, Ё→E, Ж→Zh<br>
-          З→Z, И→I, Й→Y, К→K, Л→L, М→M, Н→N<br>
-          О→O, П→P, Р→R, С→S, Т→T, У→U, Ф→F
-        </td>
-        <td>
-          <strong>Продолжение:</strong><br>
-          Х→Kh, Ц→Ts, Ч→Ch, Ш→Sh, Щ→Sch<br>
-          Ы→Y, Э→E, Ю→Yu, Я→Ya<br>
-          Ъ→'', Ь→'', ъ→'', ь→''
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2" style="text-align: center; background: #f0f8ff;">
-          <strong>Особые случаи:</strong><br>
-          "ий" → "iy", "ый" → "yy", "эй" → "ey", "ей" → "ey"
-        </td>
-      </tr>
-    </table>
-    
-    <div style="background: #e8f4f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
-      <h4>Особенности транслитерации:</h4>
-      <ul>
-        <li>Буква "Ё" транслитерируется как "E" (как и "Е")</li>
-        <li>Мягкий и твёрдый знаки опускаются</li>
-        <li>Сочетания букв могут иметь особые правила</li>
-        <li>Для паспортов РФ используется система МВД/ICAO</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Раздел 3: Примеры перевода -->
-  <div id="examples">
-    <h2>Примеры перевода других данных:</h2>
-    
-    <div class="example-box" style="display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0;">
-      <div style="flex: 1; min-width: 200px; background: #f9f9f9; padding: 15px; border-radius: 5px;">
-        <h4>Города России:</h4>
-        <p><button onclick="translateExample('Москва')" class="small-btn">Москва → ?</button></p>
-        <p><button onclick="translateExample('Санкт-Петербург')" class="small-btn">Санкт-Петербург → ?</button></p>
-        <p><button onclick="translateExample('Новосибирск')" class="small-btn">Новосибирск → ?</button></p>
-      </div>
-      
-      <div style="flex: 1; min-width: 200px; background: #f9f9f9; padding: 15px; border-radius: 5px;">
-        <h4>Распространённые фамилии:</h4>
-        <p><button onclick="translateExample('Иванов')" class="small-btn">Иванов → ?</button></p>
-        <p><button onclick="translateExample('Петрова')" class="small-btn">Петрова → ?</button></p>
-        <p><button onclick="translateExample('Смирнов')" class="small-btn">Смирнов → ?</button></p>
-      </div>
-    </div>
+ 
     
     <div id="example-result" style="padding: 15px; background: #d4edda; border-radius: 5px; margin: 15px 0; display: none;"></div>
-    
-    <div style="background: #fff3cd; padding: 15px; border-radius: 5px; margin: 15px 0; border: 1px solid #ffeaa7;">
-      <h4>Попробуйте сами:</h4>
-      <input type="text" id="custom-text" placeholder="Введите текст на кириллице" style="width: 70%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
-      <button onclick="translateCustomText()" class="form-submit" style="background: #9b59b6;">Перевести</button>
-      <p id="custom-result" style="margin-top: 10px; font-weight: bold;"></p>
-    </div>
-  </div>
 
   <!-- Ссылка наверх -->
   <div class="page-footer-links">
@@ -378,6 +308,7 @@
   <script src="js/script.js"></script>
 </body>
 </html>
+
 
 
 
