@@ -10,7 +10,6 @@
     <!-- Добавить графическую ссылку -->
     <a href="index.html" class="logo-link">
     <img src="images/logo.avif" alt="Логотип завода картонных коробок" class="logo-img">
-   <h1 class="text-center mb-5" id="top">КартонПро</h1>
   </a>
     
    <style>
@@ -75,58 +74,17 @@
   <!-- Раздел 2: Пример считывания DOM -->
   <div id="dom-example">
     <h3>Считываем фамилию, имя и год рождения:</h3>
-    
-    <div style="background: #f0f8ff; padding: 15px; border-radius: 5px; margin: 15px 0;">
-      <h4>JavaScript код для получения данных:</h4>
-      <pre style="background: #fff; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
-// Получаем все элементы &lt;p&gt; на странице
-const paragraphs = document.getElementsByTagName('p');
 
-// Второй элемент &lt;p&gt; содержит фамилию
-const surname = paragraphs[0].childNodes[1].textContent.trim();
-
-// Третий элемент &lt;p&gt; содержит имя  
-const name = paragraphs[1].childNodes[1].textContent.trim();
-
-// Четвертый элемент &lt;p&gt; содержит год рождения
-const year = paragraphs[2].childNodes[1].textContent.trim();
-
-// Выводим результат
-console.log('Фамилия:', surname);
-console.log('Имя:', name);
-console.log('Год рождения:', year);</pre>
-    </div>
 
     <button onclick="showPassportData()" class="form-submit">Считать данные из DOM</button>
     <button onclick="showConsoleData()" class="form-submit" style="background: #27ae60;">Вывести в консоль</button>
     
     <p id="result" style="font-weight: bold; color: #2c3e50; margin-top: 15px; padding: 10px; background: #e8f4f8; border-radius: 4px;"></p>
     
-    <div id="dom-structure" style="margin-top: 20px;">
-      <h4>Структура DOM элементов:</h4>
-      <ul>
-        <li><code>document.getElementsByTagName('p')</code> - получает ВСЕ элементы &lt;p&gt;</li>
-        <li><code>[0]</code> - первый элемент &lt;p&gt; (индексация с 0)</li>
-        <li><code>.childNodes[1]</code> - второй дочерний узел (текст после &lt;b&gt;)</li>
-        <li><code>.textContent</code> - получает текстовое содержимое</li>
-        <li><code>.trim()</code> - удаляет пробелы по краям</li>
-      </ul>
-    </div>
-  </div>
-
+    
   <!-- Раздел 3: Скриншот DevTools -->
   <div id="screenshot">
     <h3>Скриншот консоли браузера с результатами:</h3>
-    
-    <div style="background: #fff8e1; padding: 15px; border-radius: 5px; margin: 15px 0; border: 1px solid #ffd54f;">
-      <p><strong>Инструкция для получения скриншота:</strong></p>
-      <ol>
-        <li>Откройте инструменты разработчика (F12 или Ctrl+Shift+I)</li>
-        <li>Перейдите на вкладку "Console" (Консоль)</li>
-        <li>Нажмите кнопку "Вывести в консоль" выше</li>
-        <li>Сделайте скриншот консоли с результатами</li>
-      </ol>
-    </div>
     
     <figure>
       <img src="images/dom_screenshot.jpg" alt="Скриншот DevTools с результатами" width="600" style="border: 2px solid #ccc; border-radius: 4px;">
@@ -135,13 +93,7 @@ console.log('Год рождения:', year);</pre>
     
     <p><em>Примечание: Создайте реальный скриншот с вашего компьютера и замените изображение.</em></p>
   </div>
-
-  <!-- Кнопка для проверки всех данных -->
-  <div style="text-align: center; margin: 30px 0;">
-    <button onclick="checkAllData()" class="form-submit" style="background: #8e44ad;">Проверить все данные паспорта</button>
-    <div id="all-data-result" style="margin-top: 15px;"></div>
-  </div>
-
+    
   <!-- Ссылка наверх -->
   <div class="page-footer-links">
     <a href="#top">Вернуться к началу страницы</a> | 
@@ -261,6 +213,7 @@ console.log('Год рождения:', year);</pre>
   <script src="js/script.js"></script>
 </body>
 </html>
+
 
 
 
