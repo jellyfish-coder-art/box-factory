@@ -64,6 +64,7 @@
     <div style="text-align: center; margin: 30px 0;">
       <button onclick="translateToLatin()" class="form-submit">Перевести на латиницу</button>
       <button onclick="restoreCyrillic()" class="form-submit" style="background: #95a5a6;">Вернуть кириллицу</button>
+      <button onclick="translateAllToLatin()" class="form-submit" style="background: #e67e22;">Перевести всё (включая год)</button>
     </div>
     
     <div id="result" style="padding: 15px; background: #e8f4f8; border-radius: 5px; margin: 20px 0;"></div>
@@ -76,9 +77,6 @@
       <p><b>Место рождения:</b> <span id="translated-birthplace"></span></p>
     </div>
   </div>
-    
-
- 
     
     <div id="example-result" style="padding: 15px; background: #d4edda; border-radius: 5px; margin: 15px 0; display: none;"></div>
 
@@ -237,56 +235,6 @@
       document.getElementById('translated-passport').style.display = 'none';
     }
     
-    // Функция показа переведённых данных в отдельном блоке
-    function showTranslatedPassport() {
-      const translatedDiv = document.getElementById('translated-passport');
-      const surname = document.querySelector('#surname .cyrillic-text').textContent;
-      const name = document.querySelector('#name .cyrillic-text').textContent;
-      const year = document.querySelector('#year .cyrillic-text').textContent;
-      const birthplace = document.querySelector('#birthplace .cyrillic-text').textContent;
-      
-      document.getElementById('translated-surname').textContent = surname;
-      document.getElementById('translated-name').textContent = name;
-      document.getElementById('translated-year').textContent = year;
-      document.getElementById('translated-birthplace').textContent = birthplace;
-      
-      translatedDiv.style.display = 'block';
-    }
-    
-    // Функция для примеров перевода
-    function translateExample(text) {
-      const latinText = translit(text);
-      const resultDiv = document.getElementById('example-result');
-      
-      resultDiv.innerHTML = `
-        <strong>Пример перевода:</strong><br>
-        Кириллица: <span style="color: #2c3e50">${text}</span><br>
-        Латиница: <span style="color: #e74c3c">${latinText}</span>
-      `;
-      resultDiv.style.display = 'block';
-    }
-    
-    // Функция для перевода пользовательского текста
-    function translateCustomText() {
-      const input = document.getElementById('custom-text');
-      const text = input.value.trim();
-      
-      if (!text) {
-        alert('Введите текст для перевода');
-        return;
-      }
-      
-      const latinText = translit(text);
-      const latinFullText = translitFull(text);
-      
-      document.getElementById('custom-result').innerHTML = `
-        <strong>Результат:</strong><br>
-        Исходный текст: ${text}<br>
-        Транслитерация (буквы): ${latinText}<br>
-        Транслитерация (буквы + цифры): ${latinFullText}
-      `;
-    }
-    
     // Инициализация при загрузке страницы
     document.addEventListener('DOMContentLoaded', function() {
       console.log('Страница транслитерации загружена');
@@ -308,6 +256,7 @@
   <script src="js/script.js"></script>
 </body>
 </html>
+
 
 
 
