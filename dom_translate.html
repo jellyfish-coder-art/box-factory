@@ -55,30 +55,28 @@
     <h2>Паспортные данные (кириллица):</h2>
     
     <div class="passport-card" style="background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #dee2e6; margin: 20px 0;">
-      <p id="surname"><b>Фамилия:</b> <span class="cyrillic-text">Тухватшина</span></p>
-      <p id="name"><b>Имя:</b> <span class="cyrillic-text">Эльвина</span></p>
-      <p id="year"><b>Год рождения:</b> <span class="cyrillic-text">2005</span></p>
-      <p id="birthplace"><b>Место рождения:</b> <span class="cyrillic-text">г. Туймазы</span></p>
+      <p><b>Фамилия:</b> <span id="surname">Тухватшина</span></p>
+      <p><b>Имя:</b> <span id="name">Эльвина</span></p>
+      <p><b>Год рождения:</b> <span id="year">2005</span></p>
+      <p><b>Место рождения:</b> <span id="birthplace">г. Туймазы</span></p>
     </div>
-    
-    <div style="text-align: center; margin: 30px 0;">
-      <button onclick="translateToLatin()" class="form-submit">Перевести на латиницу</button>
-      <button onclick="restoreCyrillic()" class="form-submit" style="background: #95a5a6;">Вернуть кириллицу</button>
-      <button onclick="translateAllToLatin()" class="form-submit" style="background: #e67e22;">Перевести всё (включая год)</button>
-    </div>
-    
-    <div id="result" style="padding: 15px; background: #e8f4f8; border-radius: 5px; margin: 20px 0;"></div>
-    
-    <div id="translated-passport" style="background: #fff3cd; padding: 20px; border-radius: 8px; border: 1px solid #ffeaa7; margin: 20px 0; display: none;">
-      <h3>Переведённые данные (латиница):</h3>
-      <p><b>Фамилия:</b> <span id="translated-surname"></span></p>
-      <p><b>Имя:</b> <span id="translated-name"></span></p>
-      <p><b>Год рождения:</b> <span id="translated-year"></span></p>
-      <p><b>Место рождения:</b> <span id="translated-birthplace"></span></p>
-    </div>
+ 
+     <div style="text-align: center; margin: 30px 0;">
+    <button id="for_click" class="form-submit" style="
+        background-color: #4a6fa5;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 6px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-family: Arial, sans-serif;
+    ">
+    Изменить на латиницу
+    </button>
   </div>
-    
-    <div id="example-result" style="padding: 15px; background: #d4edda; border-radius: 5px; margin: 15px 0; display: none;"></div>
+</div>
 
   <!-- Ссылка наверх -->
   <div class="page-footer-links">
@@ -89,173 +87,27 @@
   </div>
 
   <script>
-    // Полная таблица транслитерации (ГОСТ 7.79-2000 система Б)
-    const cyrillicToLatin = {
-      'А':'A','а':'a','Б':'B','б':'b','В':'V','в':'v','Г':'G','г':'g',
-      'Д':'D','д':'d','Е':'E','е':'e','Ё':'E','ё':'e','Ж':'Zh','ж':'zh',
-      'З':'Z','з':'z','И':'I','и':'i','Й':'Y','й':'y','К':'K','к':'k',
-      'Л':'L','л':'l','М':'M','м':'m','Н':'N','н':'n','О':'O','о':'o',
-      'П':'P','п':'p','Р':'R','р':'r','С':'S','с':'s','Т':'T','т':'t',
-      'У':'U','у':'u','Ф':'F','ф':'f','Х':'Kh','х':'kh','Ц':'Ts','ц':'ts',
-      'Ч':'Ch','ч':'ch','Ш':'Sh','ш':'sh','Щ':'Sch','щ':'sch',
-      'Ы':'Y','ы':'y','Ъ':'','ъ':'','Ь':'','ь':'',
-      'Э':'E','э':'e','Ю':'Yu','ю':'yu','Я':'Ya','я':'ya'
-    };
-    
-    // Таблица для перевода цифр в слова (для года рождения)
-    const numbersToLatin = {
-      '0':'zero','1':'one','2':'two','3':'three','4':'four',
-      '5':'five','6':'six','7':'seven','8':'eight','9':'nine'
-    };
+    function find_edit() {
+      const change_node = document.getElementById("surname")
+      new_node.innerHTML="Tukhvatshina"
+      
+      const change_node = document.getElementById("name")
+      new_node.innerHTML="Elvina"
 
-    // Функция транслитерации
-    function translit(text) {
-      return text.replace(/[А-яЁё]/g, function(char) {
-        return cyrillicToLatin[char] || char;
-      });
-    }
-    
-    // Функция для перевода цифр
-    function translateNumbers(text) {
-      return text.replace(/[0-9]/g, function(num) {
-        return numbersToLatin[num] || num;
-      });
-    }
-    
-    // Функция для перевода всего текста (буквы + цифры)
-    function translitFull(text) {
-      let result = translit(text);
-      result = translateNumbers(result);
-      return result;
-    }
+      const change_node = document.getElementById("year")
+      new_node.innerHTML="two zero zero five"
 
-    // Оригинальные данные для восстановления
-    let originalData = {
-      surname: 'Тухватшина',
-      name: 'Эльвина',
-      year: '2005',
-      birthplace: 'г. Туймазы'
-    };
-
-    // Функция перевода на латиницу (только буквы)
-    function translateToLatin() {
-      const surname = document.querySelector('#surname .cyrillic-text');
-      const name = document.querySelector('#name .cyrillic-text');
-      const year = document.querySelector('#year .cyrillic-text');
-      const birthplace = document.querySelector('#birthplace .cyrillic-text');
-      
-      // Сохраняем оригинальные данные если еще не сохранены
-      if (!originalData.surname) {
-        originalData.surname = surname.textContent;
-        originalData.name = name.textContent;
-        originalData.year = year.textContent;
-        originalData.birthplace = birthplace.textContent;
-      }
-      
-      // Переводим
-      surname.textContent = translit(originalData.surname);
-      name.textContent = translit(originalData.name);
-      year.textContent = originalData.year; // Цифры не переводим
-      birthplace.textContent = translit(originalData.birthplace);
-      
-      // Показываем результат
-      const resultDiv = document.getElementById('result');
-      resultDiv.innerHTML = `
-        <strong>Данные переведены на латиницу:</strong><br>
-        • Фамилия: ${translit(originalData.surname)}<br>
-        • Имя: ${translit(originalData.name)}<br>
-        • Год рождения: ${originalData.year}<br>
-        • Место рождения: ${translit(originalData.birthplace)}
-      `;
-      
-      // Показываем переведённые данные в отдельном блоке
-      showTranslatedPassport();
-    }
-    
-    // Функция перевода ВСЕГО на латиницу (включая цифры)
-    function translateAllToLatin() {
-      const surname = document.querySelector('#surname .cyrillic-text');
-      const name = document.querySelector('#name .cyrillic-text');
-      const year = document.querySelector('#year .cyrillic-text');
-      const birthplace = document.querySelector('#birthplace .cyrillic-text');
-      
-      // Сохраняем оригинальные данные
-      if (!originalData.surname) {
-        originalData.surname = surname.textContent;
-        originalData.name = name.textContent;
-        originalData.year = year.textContent;
-        originalData.birthplace = birthplace.textContent;
-      }
-      
-      // Переводим всё (буквы + цифры)
-      surname.textContent = translit(originalData.surname);
-      name.textContent = translit(originalData.name);
-      year.textContent = translitFull(originalData.year); // Переводим и цифры!
-      birthplace.textContent = translit(originalData.birthplace);
-      
-      // Показываем результат
-      const resultDiv = document.getElementById('result');
-      resultDiv.innerHTML = `
-        <strong>Все данные переведены на латиницу (включая цифры):</strong><br>
-        • Фамилия: ${translit(originalData.surname)}<br>
-        • Имя: ${translit(originalData.name)}<br>
-        • Год рождения: ${translitFull(originalData.year)}<br>
-        • Место рождения: ${translit(originalData.birthplace)}
-      `;
-      
-      // Показываем переведённые данные в отдельном блоке
-      showTranslatedPassport();
-    }
-    
-    // Функция восстановления кириллицы
-    function restoreCyrillic() {
-      if (!originalData.surname) return;
-      
-      const surname = document.querySelector('#surname .cyrillic-text');
-      const name = document.querySelector('#name .cyrillic-text');
-      const year = document.querySelector('#year .cyrillic-text');
-      const birthplace = document.querySelector('#birthplace .cyrillic-text');
-      
-      // Восстанавливаем оригинальные данные
-      surname.textContent = originalData.surname;
-      name.textContent = originalData.name;
-      year.textContent = originalData.year;
-      birthplace.textContent = originalData.birthplace;
-      
-      // Показываем сообщение
-      document.getElementById('result').innerHTML = `
-        <strong>Данные восстановлены (кириллица):</strong><br>
-        • Фамилия: ${originalData.surname}<br>
-        • Имя: ${originalData.name}<br>
-        • Год рождения: ${originalData.year}<br>
-        • Место рождения: ${originalData.birthplace}
-      `;
-      
-      // Скрываем блок с переведёнными данными
-      document.getElementById('translated-passport').style.display = 'none';
-    }
-    
-    // Инициализация при загрузке страницы
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log('Страница транслитерации загружена');
-      console.log('Используйте кнопки для перевода текста');
-      
-      // Автоматически заполняем оригинальные данные
-      const surname = document.querySelector('#surname .cyrillic-text');
-      const name = document.querySelector('#name .cyrillic-text');
-      const year = document.querySelector('#year .cyrillic-text');
-      const birthplace = document.querySelector('#birthplace .cyrillic-text');
-      
-      originalData.surname = surname.textContent;
-      originalData.name = name.textContent;
-      originalData.year = year.textContent;
-      originalData.birthplace = birthplace.textContent;
+      const change_node = document.getElementById("birthplace")
+      new_node.innerHTML="t.Tuimazy"
+      const node_for_click = document.getElementById("for_click")
+      node_for_click.addEventListener("click", find_edit)
     });
   </script>
 
   <script src="js/script.js"></script>
 </body>
 </html>
+
 
 
 
