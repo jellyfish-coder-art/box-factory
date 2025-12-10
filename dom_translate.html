@@ -75,26 +75,42 @@
   </div>
 
   <script>
-    function find_edit() {
-      const change_node = document.getElementById("surname")
-      new_node.innerHTML="Tukhvatshina"
-      
-      const change_node = document.getElementById("name")
-      new_node.innerHTML="Elvina"
+  function find_edit() {
+  
+    const surnameNode = document.getElementById("surname");
+    surnameNode.innerHTML = "Tukhvatshina";
+    
+  
+    const nameNode = document.getElementById("name");
+    nameNode.innerHTML = "Elvina";
 
-      const change_node = document.getElementById("year")
-      new_node.innerHTML="two zero zero five"
+   
+    const yearNode = document.getElementById("year");
+    yearNode.innerHTML = "two zero zero five";
 
-      const change_node = document.getElementById("birthplace")
-      new_node.innerHTML="t.Tuimazy"}
-      
-      const node_for_click = document.getElementById("for_click")
-      node_for_click.addEventListener("click", find_edit);
-  </script>
+   
+    const birthplaceNode = document.getElementById("birthplace");
+    birthplaceNode.innerHTML = "t.Tuimazy";
+    
+
+   
+    node_for_click.removeEventListener("click", find_edit);
+
+    const node_for_click = document.getElementById("for_click");
+    node_for_click.textContent = "Изменить на латиницу";
+  
+    node_for_click.addEventListener("click", find_edit);
+  }
+  
+
+  const node_for_click = document.getElementById("for_click");
+  node_for_click.addEventListener("click", find_edit);
+</script>
 
   <script src="js/script.js"></script>
 </body>
 </html>
+
 
 
 
