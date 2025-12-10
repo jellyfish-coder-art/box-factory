@@ -54,7 +54,15 @@
 
   <!-- Раздел 1: Паспортные данные -->
   <div id="passport">
+
     <h2>Вторая страница паспорта:</h2>
+     <div id="screenshot">
+    <h3>Фото паспорта:</h3>
+    <figure>
+      <img src="images/passport.jpg" alt="Фото паспорта" width="600" style="border: 2px solid #ccc; border-radius: 4px;">
+      <figcaption>Фото</figcaption>
+    </figure>
+  </div>
     <p><b>Фамилия:</b> Тухватшина</p>
     <p><b>Имя:</b> Эльвина</span></p>
     <p><b>Год рождения:</b> 2005</span></p>
@@ -71,23 +79,11 @@
     <p><b>Адрес регистрации:</b> ул. Ленина, д. 8</p>
   </div>
 
-  <!-- Раздел 2: Пример считывания DOM -->
-  <div id="dom-example">
-    <h3>Считываем фамилию, имя и год рождения:</h3>
-
-
-    <button onclick="showPassportData()" class="form-submit">Считать данные из DOM</button>
-    <button onclick="showConsoleData()" class="form-submit" style="background: #27ae60;">Вывести в консоль</button>
-    
-    <p id="result" style="font-weight: bold; color: #2c3e50; margin-top: 15px; padding: 10px; background: #e8f4f8; border-radius: 4px;"></p>
-    
-    
   <!-- Раздел 3: Скриншот DevTools -->
   <div id="screenshot">
     <h3>Скриншот консоли браузера с результатами:</h3>
-    
     <figure>
-      <img src="images/dom_screenshot.jpg" alt="Скриншот DevTools с результатами" width="600" style="border: 2px solid #ccc; border-radius: 4px;">
+      <img src="images/screenshot.jpg" alt="Скриншот с результатами" width="600" style="border: 2px solid #ccc; border-radius: 4px;">
       <figcaption>Пример скриншота консоли браузера с полученными данными из DOM</figcaption>
     </figure>
   </div>
@@ -98,119 +94,11 @@
     <a href="index.html">На главную страницу</a> |
     <a href="dom_translate.html">Следующая: Кириллица → Латиница</a>
   </div>
-
-  <script>
-    // Функция для считывания данных из DOM (как в задании)
-    function showPassportData() {
-      // Получаем все элементы <p>
-      const paragraphs = document.getElementsByTagName('p');
-      
-      // Проверяем, что есть достаточно элементов
-      if (paragraphs.length < 3) {
-        document.getElementById('result').textContent = 'Ошибка: Не найдены элементы <p>';
-        return;
-      }
-      
-      // Получаем данные как указано в задании
-      // Индексация: 0, 1, 2 - первые три <p> элемента
-      const surname = paragraphs[0].childNodes[1].textContent.trim();
-      const name = paragraphs[1].childNodes[1].textContent.trim();
-      const year = paragraphs[2].childNodes[1].textContent.trim();
-      
-      // Выводим результат
-      const resultElement = document.getElementById('result');
-      resultElement.innerHTML = `
-        <strong>Полученные данные из DOM:</strong><br>
-        • Фамилия: <span style="color: #e74c3c">${surname}</span><br>
-        • Имя: <span style="color: #e74c3c">${name}</span><br>
-        • Год рождения: <span style="color: #e74c3c">${year}</span><br>
-        <small style="color: #7f8c8d">(получено через document.getElementsByTagName('p')[n].childNodes[1].textContent)</small>
-      `;
-      
-      // Подсвечиваем полученные данные в паспорте
-      highlightPassportData(surname, name, year);
-    }
-    
-    // Функция для вывода в консоль
-    function showConsoleData() {
-      const paragraphs = document.getElementsByTagName('p');
-      const surname = paragraphs[0].childNodes[1].textContent.trim();
-      const name = paragraphs[1].childNodes[1].textContent.trim();
-      const year = paragraphs[2].childNodes[1].textContent.trim();
-      
-      console.log('=== ДАННЫЕ ИЗ DOM ===');
-      console.log('Фамилия:', surname);
-      console.log('Имя:', name);
-      console.log('Год рождения:', year);
-      console.log('=====================');
-      
-      // Показываем сообщение пользователю
-      document.getElementById('result').textContent = 
-        'Данные выведены в консоль браузера (F12 → Console)';
-    }
-    
-    // Функция для подсветки данных в паспорте
-    function highlightPassportData(surname, name, year) {
-      // Сбрасываем предыдущую подсветку
-      const spans = document.querySelectorAll('#passport span');
-      spans.forEach(span => {
-        span.style.backgroundColor = '';
-        span.style.padding = '';
-        span.style.borderRadius = '';
-      });
-      
-      // Подсвечиваем текущие данные
-      document.getElementById('surname').style.backgroundColor = '#ffeb3b';
-      document.getElementById('surname').style.padding = '2px 5px';
-      document.getElementById('surname').style.borderRadius = '3px';
-      
-      document.getElementById('name').style.backgroundColor = '#ffeb3b';
-      document.getElementById('name').style.padding = '2px 5px';
-      document.getElementById('name').style.borderRadius = '3px';
-      
-      document.getElementById('year').style.backgroundColor = '#ffeb3b';
-      document.getElementById('year').style.padding = '2px 5px';
-      document.getElementById('year').style.borderRadius = '3px';
-      
-      // Убираем подсветку через 3 секунды
-      setTimeout(() => {
-        spans.forEach(span => {
-          span.style.backgroundColor = '';
-          span.style.padding = '';
-          span.style.borderRadius = '';
-        });
-      }, 3000);
-    }
-    
-    // Функция для проверки всех данных
-    function checkAllData() {
-      const paragraphs = document.getElementsByTagName('p');
-      let resultHTML = '<h4>Все данные паспорта:</h4><ul>';
-      
-      // Выводим все элементы <p>
-      for (let i = 0; i < paragraphs.length; i++) {
-        const p = paragraphs[i];
-        const boldText = p.querySelector('b') ? p.querySelector('b').textContent : 'Нет тега <b>';
-        const textContent = p.textContent.replace(boldText, '').trim();
-        
-        resultHTML += `<li><strong>p[${i}]:</strong> ${boldText} ${textContent}</li>`;
-      }
-      
-      resultHTML += '</ul>';
-      
-      document.getElementById('all-data-result').innerHTML = resultHTML;
-    }
-    
-    // Автоматически считываем данные при загрузке страницы
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log('Страница "Считываем DOM" загружена');
-      console.log('Используйте кнопки для работы с DOM');
-    });
-  </script>
   
   <script src="js/script.js"></script>
 </body>
 </html>
+
 
 
 
